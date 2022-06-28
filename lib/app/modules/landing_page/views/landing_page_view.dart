@@ -25,19 +25,32 @@ class LandingPageView extends GetView<LandingPageController> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GestureDetector(
+            InkWell(
+              onTap: () => Get.offAllNamed(Routes.TTS),
               child: Container(
-                width: 100,
-                height: 30,
+                width: 149,
+                height: 50,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  gradient: LinearGradient(colors: const [appRed, appWhite]),
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(
+                    color: Color.fromRGBO(0, 0, 0, 1),
+                    width: 2,
+                  ),
+                  gradient: LinearGradient(
+                      begin: Alignment(6.123234262925839e-17, 1),
+                      end: Alignment(-1, 6.123234262925839e-17),
+                      colors: [
+                        Color.fromRGBO(255, 0, 0, 1),
+                        Color.fromRGBO(255, 255, 255, 1)
+                      ]),
                 ),
-                child: Center(
+                child: Container(
+                  alignment: Alignment.center,
                   child: Text(
                     "Mulai",
                     style: TextStyle(
-                      fontSize: 15,
+                      color: appWhite,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -46,13 +59,7 @@ class LandingPageView extends GetView<LandingPageController> {
             ),
             // ElevatedButton(
             //   onPressed: () => Get.offAllNamed(Routes.TTS),
-            //   child: Text(
-            //     "Mulai",
-            //     style: TextStyle(
-            //       fontSize: 20,
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
+
             //   style: ElevatedButton.styleFrom(
             //       primary: Colors.red,
             //       shape: RoundedRectangleBorder(
