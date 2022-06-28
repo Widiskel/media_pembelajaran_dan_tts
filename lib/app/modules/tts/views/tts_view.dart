@@ -42,7 +42,7 @@ class TtsView extends GetView<TtsController> {
                         borderRadius: BorderRadius.circular(30),
                         color: appWhite,
                       ),
-                      child: Text("TTS"),
+                      child: Text(""),
                     ),
                   ),
                 ],
