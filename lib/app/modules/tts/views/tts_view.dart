@@ -1,8 +1,9 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:media_pembelajaran_dan_tts/app/modules/CrossWordWidget.dart';
 import 'package:media_pembelajaran_dan_tts/app/pallete/color_pallete.dart';
 
 import '../controllers/tts_controller.dart';
@@ -13,6 +14,7 @@ class TtsView extends GetView<TtsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        alignment: Alignment.center,
         height: Get.height,
         width: Get.width,
         decoration: BoxDecoration(
@@ -22,32 +24,9 @@ class TtsView extends GetView<TtsController> {
           ),
         ),
         child: Column(
-          children: <Widget>[
-            Center(
-              child: Icon(
-                Icons.videogame_asset_rounded,
-                color: appBlue,
-                size: 100,
-              ),
-            ),
-            Container(
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Container(
-                      width: Get.width,
-                      height: 250,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: appWhite,
-                      ),
-                      child: Text(""),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+          children: [
+            Icon(Icons.videogame_asset_rounded, size: 100, color: Colors.red),
+            CrosswordWidget(),
           ],
         ),
       ),

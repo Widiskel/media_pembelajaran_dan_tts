@@ -1,0 +1,15 @@
+int perColTotal = 3;
+List<Widget> list = List.generate(
+    (value.length ~/ perColTotal) +
+        ((value.length ~/ perColTotal) + (value.length % perColTotal) > 0
+            ? 1
+            : 0), (int index) {
+  int maxColumn = (index + 1) * perColTotal;
+  return Row(
+    children: List.generate(
+        maxColumn > value.length ? maxColumn - value.length : perColTotal,
+        ((indexChild) {
+      return Text("answer");
+    })),
+  );
+});
