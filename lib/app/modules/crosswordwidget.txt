@@ -5,26 +5,28 @@ import 'package:media_pembelajaran_dan_tts/app/pallete/color_pallete.dart';
 import 'package:word_search/word_search.dart';
 
 class CrosswordWidget extends StatefulWidget {
-  CrosswordWidget({Key? key}) : super(key: key);
+  CrosswordWidget({Key key}) : super(key: key);
 
   @override
   _CrosswordWidgetState createState() => _CrosswordWidgetState();
 }
 
 class _CrosswordWidgetState extends State<CrosswordWidget> {
-  int baris = 5;
   int kolom = 5;
   double padding = 5;
   double margin = 50;
   Size sizeBox = Size.zero;
-  late ValueNotifier<List<List<String>>> listChars;
-  late ValueNotifier<List<CrosswordAnswer>> answerList;
-  late ValueNotifier<CurrentDragObj> currentDragObj;
+  ValueNotifier<List<List<String>>> listChars;
+  ValueNotifier<List<CrosswordAnswer>> answerList;
+  ValueNotifier<CurrentDragObj> currentDragObj;
+  ValueNotifier<List<int>> charsDone;
   @override
   void initState() {
     super.initState();
     listChars = new ValueNotifier<List<List<String>>>([]);
     answerList = new ValueNotifier<List<CrosswordAnswer>>([]);
+    currentDragObj = new ValueNotifier<CurrentDragObj>(new CurrentDragObj());
+    charsDone = new ValueNotifier<List<int>>(new List<int>());
     generatereRandomWord();
   }
 
@@ -68,6 +70,18 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
   void onDragUpdate(PointerMoveEvent event) {
     print("move");
     generateLineOnDrag(event);
+    int indexFound = answerList.value.indexWhere((answer) {
+      return answer.answerLines.join("-") ==
+          currentDragObj.value.currentDragLine.join("-");
+    });
+
+    if (indexFound >= 0) {
+      answerList.value[indexFound].done = true;
+      charsDone.value.addAll(answerList.value[indexFound].answerLines);
+      charsDone.notifyListeners();
+      answerList.notifyListeners();
+      onDragEnd(null);
+    }
   }
 
   int calculateIndexBasePosLocal(Offset localPosition) {
@@ -103,7 +117,40 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
 
   void generateLineOnDrag(PointerMoveEvent event) {
     if (currentDragObj.value.currentDragLine == null)
-      currentDragObj.value.currentDragLine = <int>[];
+      currentDragObj.value.currentDragLine = new List<int>();
+
+    int indexBase = calculateIndexBasePosLocal(event.localPosition);
+
+    if (indexBase >= 0) {
+      if (currentDragObj.value.currentDragLine.length >= 2) {
+        WSOrientation wsOrientation;
+
+        if (currentDragObj.value.currentDragLine[0] % kolom ==
+            currentDragObj.value.currentDragLine[1] % kolom)
+          wsOrientation = WSOrientation.vertical;
+        else if (currentDragObj.value.currentDragLine[0] ~/ kolom ==
+            currentDragObj.value.currentDragLine[1] ~/ kolom)
+          wsOrientation = WSOrientation.horizontal;
+
+        if (wsOrientation == WSOrientation.horizontal) {
+          if (indexBase ~/ kolom !=
+              currentDragObj.value.currentDragLine[1] ~/ kolom) onDragEnd(null);
+        } else if (wsOrientation == WSOrientation.vertical) {
+          if (indexBase % kolom !=
+              currentDragObj.value.currentDragLine[1] % kolom) onDragEnd(null);
+        } else
+          onDragEnd(null);
+      }
+
+      if (!currentDragObj.value.currentDragLine.contains(indexBase))
+        currentDragObj.value.currentDragLine.add(indexBase);
+      else if (currentDragObj.value.currentDragLine.length >=
+          2) if (currentDragObj.value.currentDragLine[
+              currentDragObj.value.currentDragLine.length - 2] ==
+          indexBase) onDragEnd(null);
+
+      currentDragObj.notifyListeners();
+    }
   }
 
   void onDragStart(int indexArray) {
@@ -124,14 +171,15 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
       onPointerMove: (event) => onDragUpdate(event),
       child: LayoutBuilder(
         builder: (context, constraints) {
+          sizeBox = Size(constraints.maxWidth, constraints.maxWidth);
           return GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 1,
-              crossAxisCount: baris,
+              crossAxisCount: kolom,
               crossAxisSpacing: padding,
               mainAxisSpacing: padding,
             ),
-            itemCount: baris * kolom,
+            itemCount: kolom * kolom,
             physics: ScrollPhysics(),
             itemBuilder: (context, index) {
               String char = listChars.value.expand((e) => e).toList()[index];
@@ -160,7 +208,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
     final List<String> answer = ["Bumi", "Korek", "Bulat"];
 
     final WSSettings ws = WSSettings(
-      width: baris,
+      width: kolom,
       height: kolom,
       orientations: List.from([
         WSOrientation.horizontal,
@@ -180,7 +228,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
 
       final WSSolved solved = wordSearch.solvePuzzle(newPuzzle.puzzle, answer);
       answerList.value = solved.found
-          .map((solve) => new CrosswordAnswer(solve, numPerRow: baris))
+          .map((solve) => new CrosswordAnswer(solve, numPerRow: kolom))
           .toList();
     }
   }
@@ -236,28 +284,28 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
 }
 
 class CurrentDragObj {
-  late Offset currentDragPos;
+  Offset currentDragPos;
   Offset currentTouch;
   int indexArrayOnTouch;
-  List<int> currentDragLine = <int>[];
+  List<int> currentDragLine = new List<int>();
 
   CurrentDragObj({
-    required this.indexArrayOnTouch,
-    required this.currentTouch,
+    this.indexArrayOnTouch,
+    this.currentTouch,
   });
 }
 
 class CrosswordAnswer {
   bool done = false;
-  late int indexArray;
+  int indexArray;
   WSLocation wsLocation;
-  late List<int> answerLines;
-  CrosswordAnswer(this.wsLocation, {required int numPerRow}) {
+  List<int> answerLines;
+  CrosswordAnswer(this.wsLocation, {int numPerRow}) {
     this.indexArray = this.wsLocation.y * numPerRow + this.wsLocation.x;
     generateAnswerLine(numPerRow);
   }
   void generateAnswerLine(int numPerRow) {
-    this.answerLines = <int>[];
+    this.answerLines = new List<int>();
 
     this.answerLines.addAll(List<int>.generate(this.wsLocation.overlap,
         (index) => generateIndexBaseOnAxis(this.wsLocation, index, numPerRow)));

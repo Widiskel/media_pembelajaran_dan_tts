@@ -1,15 +1,42 @@
-int perColTotal = 3;
-List<Widget> list = List.generate(
-    (value.length ~/ perColTotal) +
-        ((value.length ~/ perColTotal) + (value.length % perColTotal) > 0
-            ? 1
-            : 0), (int index) {
-  int maxColumn = (index + 1) * perColTotal;
-  return Row(
-    children: List.generate(
-        maxColumn > value.length ? maxColumn - value.length : perColTotal,
-        ((indexChild) {
-      return Text("answer");
-    })),
-  );
-});
+Container(
+      child: Column(
+        children: [
+          Container(
+            color: Colors.blue,
+            alignment: Alignment.center,
+            width: double.maxFinite,
+            height: size.width - padding * 2,
+            padding: EdgeInsets.all(padding),
+            margin: EdgeInsets.all(padding),
+            child: drawCrosswordBox(),
+          ),
+          Container(
+            alignment: Alignment.center,
+            child: drawAnswerList(),
+          ),
+        ],
+      ),
+    )
+
+
+    Text(
+                      '1. Apa nama planet yang kita tinggali saat ini ?',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: value[0].done ? appLightBlue : appBlack,
+                      ),
+                    ),
+                    Text(
+                        '2. Apa nama benda yang digunakan untuk membakar sesuatu ?',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: value[1].done ? appLightBlue : appBlack,
+                        )),
+                    Text('3. Seperti apakah bentuk bumi planet itu ?',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: value[2].done ? appLightBlue : appBlack,
+                        )),

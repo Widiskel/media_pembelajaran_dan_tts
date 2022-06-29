@@ -9,7 +9,7 @@ import 'package:media_pembelajaran_dan_tts/app/routes/app_pages.dart';
 import '../controllers/landing_page_controller.dart';
 
 class LandingPageView extends GetView<LandingPageController> {
-  const LandingPageView({Key? key}) : super(key: key);
+  const LandingPageView({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

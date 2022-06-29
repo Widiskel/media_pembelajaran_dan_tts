@@ -3,30 +3,39 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:media_pembelajaran_dan_tts/app/modules/CrossWordWidget.dart';
+import 'package:media_pembelajaran_dan_tts/app/modules/cwwidget.dart';
 import 'package:media_pembelajaran_dan_tts/app/pallete/color_pallete.dart';
 
 import '../controllers/tts_controller.dart';
 
 class TtsView extends GetView<TtsController> {
-  const TtsView({Key? key}) : super(key: key);
+  const TtsView({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        height: Get.height,
-        width: Get.width,
+        constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/img/back.png"),
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
+        child: Stack(
           children: [
-            Icon(Icons.videogame_asset_rounded, size: 100, color: Colors.red),
-            CrosswordWidget(),
+            Container(
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.only(top: 30),
+              height: 600,
+              width: double.maxFinite,
+              child: CrosswordWidget(),
+            ),
+            Container(
+              alignment: Alignment.topCenter,
+              child: Icon(Icons.videogame_asset_rounded,
+                  size: 100, color: Colors.red),
+            ),
           ],
         ),
       ),
