@@ -1,9 +1,13 @@
 import 'package:get/get.dart';
-import 'package:media_pembelajaran_dan_tts/app/modules/tts/bindings/tts_binding.dart';
-import 'package:media_pembelajaran_dan_tts/app/modules/tts/views/tts_view.dart';
 
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
 import '../modules/landing_page/bindings/landing_page_binding.dart';
 import '../modules/landing_page/views/landing_page_view.dart';
+import '../modules/profil/bindings/profil_binding.dart';
+import '../modules/profil/views/profil_view.dart';
+import '../modules/tts/bindings/tts_binding.dart';
+import '../modules/tts/views/tts_view.dart';
 
 part 'app_routes.dart';
 
@@ -21,6 +25,16 @@ class AppPages {
       name: _Paths.TTS,
       page: () => const TtsView(),
       binding: TtsBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOME,
+      page: () => const HomeView(),
+      binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFIL,
+      page: () => const ProfilView(),
+      binding: ProfilBinding(),
     ),
   ];
 }

@@ -30,7 +30,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
     answerList = new ValueNotifier<List<CrosswordAnswer>>([]);
     currentDragObj = new ValueNotifier<CurrentDragObj>(new CurrentDragObj());
     charsDone = new ValueNotifier<List<int>>(new List<int>());
-    // generate char array crossword
+
     generateRandomWord();
   }
 
@@ -218,10 +218,10 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                 child: ValueListenableBuilder(
                   valueListenable: currentDragObj,
                   builder: (context, CurrentDragObj value, child) {
-                    Color color = Colors.yellow;
+                    Color color = appWhite;
 
                     if (value.currentDragLine.contains(index))
-                      color = appRed;
+                      color = appLightRed;
                     else if (charsDone.value.contains(index))
                       color = appLightBlue;
 

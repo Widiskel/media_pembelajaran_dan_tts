@@ -18,7 +18,7 @@ class LandingPageView extends GetView<LandingPageController> {
         width: Get.width,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/img/back.png"),
+            image: AssetImage("assets/img/bg.png"),
             fit: BoxFit.cover,
           ),
         ),
@@ -28,44 +28,34 @@ class LandingPageView extends GetView<LandingPageController> {
             InkWell(
               onTap: () => Get.offAllNamed(Routes.TTS),
               child: Container(
-                width: 149,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(
-                    color: Color.fromRGBO(0, 0, 0, 1),
-                    width: 2,
-                  ),
-                  gradient: LinearGradient(
-                      begin: Alignment(6.123234262925839e-17, 1),
-                      end: Alignment(-1, 6.123234262925839e-17),
-                      colors: [
-                        Color.fromRGBO(255, 0, 0, 1),
-                        Color.fromRGBO(255, 255, 255, 1)
-                      ]),
-                ),
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Mulai",
-                    style: TextStyle(
-                      color: appWhite,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  width: 149,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/img/mulai.png"),
                     ),
+                    borderRadius: BorderRadius.circular(30),
+                    border: Border.all(
+                      color: Color.fromRGBO(0, 0, 0, 1),
+                      width: 2,
+                    ),
+                    gradient: LinearGradient(
+                        begin: Alignment(6.123234262925839e-17, 1),
+                        end: Alignment(-1, 6.123234262925839e-17),
+                        colors: [
+                          Color.fromRGBO(255, 0, 0, 1),
+                          Color.fromRGBO(255, 255, 255, 1)
+                        ]),
                   ),
-                ),
-              ),
+                  child: Material(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () => Get.offAllNamed(Routes.HOME),
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                  )),
             ),
-            // ElevatedButton(
-            //   onPressed: () => Get.offAllNamed(Routes.TTS),
-
-            //   style: ElevatedButton.styleFrom(
-            //       primary: Colors.red,
-            //       shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(30)),
-            //       padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20)),
-            // ),
           ],
         ),
       ),
