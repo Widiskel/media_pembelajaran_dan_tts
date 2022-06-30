@@ -4,6 +4,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/landing_page/bindings/landing_page_binding.dart';
 import '../modules/landing_page/views/landing_page_view.dart';
+import '../modules/materi/bindings/materi_binding.dart';
+import '../modules/materi/views/materi_view.dart';
 import '../modules/profil/bindings/profil_binding.dart';
 import '../modules/profil/views/profil_view.dart';
 import '../modules/tts/bindings/tts_binding.dart';
@@ -35,6 +37,11 @@ class AppPages {
       name: _Paths.PROFIL,
       page: () => const ProfilView(),
       binding: ProfilBinding(),
+    ),
+    GetPage(
+      name: _Paths.MATERI,
+      page: () => const MateriView(),
+      binding: MateriBinding(),
     ),
   ];
 }

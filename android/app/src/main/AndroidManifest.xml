@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.media_pembelajaran_dan_tts">
    <application
-        android:label="media_pembelajaran_dan_tts"
+        android:label="Media Pembelajaran Crossword"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

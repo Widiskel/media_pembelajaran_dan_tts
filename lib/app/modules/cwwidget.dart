@@ -1,8 +1,8 @@
 // ignore_for_file: invalid_use_of_protected_member, deprecated_member_use, invalid_use_of_visible_for_testing_member
 
+import 'package:crossword_mp/app/pallete/color_pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:media_pembelajaran_dan_tts/app/pallete/color_pallete.dart';
 import 'package:word_search/word_search.dart';
 
 class CrosswordWidget extends StatefulWidget {
@@ -37,7 +37,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: double.infinity,
+      height: double.maxFinite,
       decoration: BoxDecoration(
           color: appLightRed.withOpacity(0.3),
           borderRadius: BorderRadius.circular(10),
@@ -203,6 +203,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
         builder: (context, constraints) {
           sizeBox = Size(constraints.maxWidth, constraints.maxWidth);
           return GridView.builder(
+            padding: EdgeInsets.zero,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 1,
               crossAxisCount: numBoxPerRow,
@@ -210,7 +211,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
               mainAxisSpacing: padding,
             ),
             itemCount: numBoxPerRow * numBoxPerRow,
-            physics: ScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               String char = listChars.value.expand((e) => e).toList()[index];
               return Listener(

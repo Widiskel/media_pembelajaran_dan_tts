@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'app/routes/app_pages.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(GetMaterialApp(

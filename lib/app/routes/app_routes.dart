@@ -9,6 +9,7 @@ abstract class Routes {
   static const TTS = _Paths.TTS;
   static const HOME = _Paths.HOME;
   static const PROFIL = _Paths.PROFIL;
+  static const MATERI = _Paths.MATERI;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const TTS = '/tts';
   static const HOME = '/home';
   static const PROFIL = '/profil';
+  static const MATERI = '/materi';
 }
