@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/kdki/bindings/kdki_binding.dart';
+import '../modules/kdki/views/kdki_view.dart';
 import '../modules/landing_page/bindings/landing_page_binding.dart';
 import '../modules/landing_page/views/landing_page_view.dart';
 import '../modules/materi/bindings/materi_binding.dart';
@@ -42,6 +44,11 @@ class AppPages {
       name: _Paths.MATERI,
       page: () => const MateriView(),
       binding: MateriBinding(),
+    ),
+    GetPage(
+      name: _Paths.KDKI,
+      page: () => const KdkiView(),
+      binding: KdkiBinding(),
     ),
   ];
 }

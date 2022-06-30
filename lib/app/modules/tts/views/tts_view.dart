@@ -24,84 +24,80 @@ class TtsView extends GetView<TtsController> {
       },
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        body: Container(
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/img/bg.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.only(top: 30),
-                child: Stack(
-                  children: [
-                    Container(
-                      height: 60,
-                      width: 60,
-                      margin: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(
-                          color: Color.fromRGBO(0, 0, 0, 1),
-                          width: 1,
-                        ),
-                        image: DecorationImage(
-                          image: AssetImage("assets/img/back.png"),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      child: Material(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.transparent,
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(30),
-                          onTap: () => Get.offAllNamed(Routes.HOME),
-                        ),
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 60,
-                          width: 120,
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            border: Border.all(
-                              color: Color.fromRGBO(0, 0, 0, 1),
-                              width: 1,
-                            ),
-                            image: DecorationImage(
-                              image: AssetImage("assets/img/i_game.png"),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          child: Material(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.transparent,
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(30),
-                              onTap: () {},
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+        body: Stack(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/img/bg.png"),
+                  fit: BoxFit.cover,
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(20),
-                height: 600,
-                width: double.maxFinite,
-                child: CrosswordWidget(),
+            ),
+            Container(
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.only(top: 80),
+              height: double.infinity,
+              width: double.maxFinite,
+              child: CrosswordWidget(),
+            ),
+            Container(
+              height: 60,
+              width: 60,
+              margin: EdgeInsets.only(left: 10, top: 30),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(
+                  color: Color.fromRGBO(0, 0, 0, 1),
+                  width: 1,
+                ),
+                image: DecorationImage(
+                  image: AssetImage("assets/img/back.png"),
+                  fit: BoxFit.fill,
+                ),
               ),
-            ],
-          ),
+              child: Material(
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(30),
+                  onTap: () => Get.offAllNamed(Routes.HOME),
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 60,
+                  width: 120,
+                  margin: EdgeInsets.only(top: 30),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    border: Border.all(
+                      color: Color.fromRGBO(0, 0, 0, 1),
+                      width: 1,
+                    ),
+                    image: DecorationImage(
+                      image: AssetImage("assets/img/i_game.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  child: Material(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.transparent,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(30),
+                      onTap: () {},
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

@@ -10,6 +10,7 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const PROFIL = _Paths.PROFIL;
   static const MATERI = _Paths.MATERI;
+  static const KDKI = _Paths.KDKI;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const HOME = '/home';
   static const PROFIL = '/profil';
   static const MATERI = '/materi';
+  static const KDKI = '/kdki';
 }

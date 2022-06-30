@@ -4,6 +4,7 @@ import 'package:crossword_mp/app/pallete/color_pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:word_search/word_search.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class CrosswordWidget extends StatefulWidget {
   CrosswordWidget({Key key}) : super(key: key);
@@ -36,30 +37,37 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: double.maxFinite,
-      decoration: BoxDecoration(
-          color: appLightRed.withOpacity(0.3),
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: appBlack, width: 2)),
-      child: Column(
-        children: [
-          AspectRatio(
-            aspectRatio: 1,
-            child: Container(
-              color: Colors.blue,
-              alignment: Alignment.center,
-              padding: EdgeInsets.all(padding),
-              margin: EdgeInsets.all(30),
-              child: drawCrosswordBox(),
-            ),
+    return Stack(
+      children: [
+        Container(
+          height: double.infinity,
+          decoration: BoxDecoration(
+              color: appLightRed.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: appBlack, width: 2)),
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                      color: Colors.blue,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(padding),
+                      margin: EdgeInsets.all(30),
+                      child: drawCrosswordBox(),
+                    ),
+                  ),
+                  Expanded(
+                    child: drawAnswerList(),
+                  ),
+                ],
+              ),
+            ],
           ),
-          Container(
-            alignment: Alignment.bottomCenter,
-            child: drawAnswerList(),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -70,7 +78,15 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
     currentDragObj.notifyListeners();
   }
 
-  void onDragUpdate(PointerMoveEvent event) {
+  void playAudio() async {
+    final player1 = AudioPlayer();
+    await player1.setSourceUrl(
+        'https://www.mboxdrive.com/Congratulations%20Sound%20Effects%20[Free%20Audio].mp3');
+    await player1.play;
+    await player1.resume();
+  }
+
+  void onDragUpdate(PointerMoveEvent event) async {
     generateLineOnDrag(event);
     int indexFound = answerList.value.indexWhere((answer) {
       return answer.answerLines.join("-") ==
@@ -106,6 +122,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
             ),
           ],
         );
+        playAudio();
         showDialog(context: context, builder: (context) => alert);
       }
     }
@@ -274,7 +291,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
-        height: 150,
+        margin: EdgeInsets.only(bottom: 30),
         decoration: BoxDecoration(
             color: appWhite.withOpacity(0.5),
             borderRadius: BorderRadius.circular(10),
@@ -282,36 +299,38 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
         child: ValueListenableBuilder(
           valueListenable: answerList,
           builder: (context, List<CrosswordAnswer> value, child) {
-            return Padding(
-              padding: const EdgeInsets.all(10),
-              child: Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '1. Apa nama planet yang kita tinggali saat ini ?',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: value[0].done ? appLightBlue : appBlack,
+            return Stack(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '1. Apa nama planet yang kita tinggali saat ini ?',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: value[0].done ? appLightBlue : appBlack,
+                        ),
                       ),
-                    ),
-                    Text(
-                        '2. Apa nama benda yang digunakan untuk membakar sesuatu ?',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                          color: value[1].done ? appLightBlue : appBlack,
-                        )),
-                    Text('3. Seperti apakah bentuk bumi planet itu ?',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                          color: value[2].done ? appLightBlue : appBlack,
-                        )),
-                  ],
+                      Text(
+                          '2. Apa nama benda yang digunakan untuk membakar sesuatu ?',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: value[1].done ? appLightBlue : appBlack,
+                          )),
+                      Text('3. Seperti apakah bentuk bumi planet itu ?',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: value[2].done ? appLightBlue : appBlack,
+                          )),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             );
           },
         ),
