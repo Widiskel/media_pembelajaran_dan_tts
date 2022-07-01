@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
+import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:crossword_mp/app/modules/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -44,27 +45,30 @@ class TtsView extends GetView<TtsController> {
               width: double.maxFinite,
               child: CrosswordWidget(),
             ),
-            Container(
-              height: 60,
-              width: 60,
-              margin: EdgeInsets.only(left: 10, top: 30),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                border: Border.all(
-                  color: Color.fromRGBO(0, 0, 0, 1),
-                  width: 1,
-                ),
-                image: DecorationImage(
-                  image: AssetImage("assets/img/back.png"),
-                  fit: BoxFit.fill,
-                ),
-              ),
-              child: Material(
-                borderRadius: BorderRadius.circular(30),
-                color: Colors.transparent,
-                child: InkWell(
+            BouncingWidget(
+              scaleFactor: 3,
+              onPressed: () {
+                Future.delayed(
+                  Duration(milliseconds: 300),
+                  () {
+                    Get.offAllNamed(Routes.HOME);
+                  },
+                );
+              },
+              child: Container(
+                height: 60,
+                width: 60,
+                margin: EdgeInsets.only(left: 10, top: 40),
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  onTap: () => Get.offAllNamed(Routes.HOME),
+                  border: Border.all(
+                    color: Color.fromRGBO(0, 0, 0, 1),
+                    width: 1,
+                  ),
+                  image: DecorationImage(
+                    image: AssetImage("assets/img/back.png"),
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
             ),
@@ -74,7 +78,7 @@ class TtsView extends GetView<TtsController> {
                 Container(
                   height: 60,
                   width: 120,
-                  margin: EdgeInsets.only(top: 30),
+                  margin: EdgeInsets.only(top: 40),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     border: Border.all(

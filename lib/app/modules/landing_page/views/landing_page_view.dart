@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, unused_import, sort_child_properties_last
 
+import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -48,36 +49,31 @@ class LandingPageView extends GetView<LandingPageController> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              InkWell(
-                onTap: () => Get.offAllNamed(Routes.TTS),
+              BouncingWidget(
+                stayOnBottom: false,
+                onPressed: () {
+                  Future.delayed(
+                    Duration(milliseconds: 400),
+                    () {
+                      Get.offAllNamed(Routes.HOME);
+                    },
+                  );
+                },
+                scaleFactor: 2,
                 child: Container(
-                    width: 149,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/img/start.png"),
-                      ),
-                      borderRadius: BorderRadius.circular(30),
-                      border: Border.all(
-                        color: Color.fromRGBO(0, 0, 0, 1),
-                        width: 2,
-                      ),
-                      gradient: LinearGradient(
-                          begin: Alignment(6.123234262925839e-17, 1),
-                          end: Alignment(-1, 6.123234262925839e-17),
-                          colors: [
-                            Color.fromRGBO(255, 0, 0, 1),
-                            Color.fromRGBO(255, 255, 255, 1)
-                          ]),
+                  width: 149,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/img/start.png"),
                     ),
-                    child: Material(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () => Get.offAllNamed(Routes.HOME),
-                        borderRadius: BorderRadius.circular(40),
-                      ),
-                    )),
+                    borderRadius: BorderRadius.circular(30),
+                    border: Border.all(
+                      color: Color.fromRGBO(0, 0, 0, 1),
+                      width: 2,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/game_home/bindings/game_home_binding.dart';
+import '../modules/game_home/views/game_home_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/kdki/bindings/kdki_binding.dart';
@@ -49,6 +51,11 @@ class AppPages {
       name: _Paths.KDKI,
       page: () => const KdkiView(),
       binding: KdkiBinding(),
+    ),
+    GetPage(
+      name: _Paths.GAME_HOME,
+      page: () => const GameHomeView(),
+      binding: GameHomeBinding(),
     ),
   ];
 }

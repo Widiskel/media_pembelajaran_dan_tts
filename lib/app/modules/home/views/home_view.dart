@@ -1,3 +1,4 @@
+import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:crossword_mp/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -47,8 +48,8 @@ class HomeView extends GetView<HomeController> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  height: 50,
-                  width: 150,
+                  height: 60,
+                  width: 180,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("assets/img/men.png"),
@@ -58,57 +59,59 @@ class HomeView extends GetView<HomeController> {
                   child: Text(""),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 40,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(
-                          color: Color.fromRGBO(0, 0, 0, 1),
-                          width: 1,
-                        ),
-                        image: DecorationImage(
-                          image: AssetImage("assets/img/t_ptjk.png"),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      child: Material(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.transparent,
-                        child: InkWell(
+                    BouncingWidget(
+                      scaleFactor: 3,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 400),
+                          () {},
+                        );
+                      },
+                      child: Container(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          onTap: () {},
+                          border: Border.all(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            width: 1,
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage("assets/img/t_ptjk.png"),
+                            fit: BoxFit.fill,
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(
-                      width: 25,
+                      width: 30,
                     ),
-                    Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(
-                          color: Color.fromRGBO(0, 0, 0, 1),
-                          width: 1,
-                        ),
-                        image: DecorationImage(
-                          image: AssetImage("assets/img/kd.png"),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      child: Material(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.transparent,
-                        child: InkWell(
+                    BouncingWidget(
+                      scaleFactor: 3,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 300),
+                          () {},
+                        );
+                      },
+                      child: Container(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          onTap: () {},
+                          border: Border.all(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            width: 1,
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage("assets/img/kd.png"),
+                            fit: BoxFit.fill,
+                          ),
                         ),
                       ),
                     ),
@@ -120,53 +123,59 @@ class HomeView extends GetView<HomeController> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(
-                          color: Color.fromRGBO(0, 0, 0, 1),
-                          width: 1,
-                        ),
-                        image: DecorationImage(
-                          image: AssetImage("assets/img/t_materi.png"),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      child: Material(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.transparent,
-                        child: InkWell(
+                    BouncingWidget(
+                      scaleFactor: 3,
+                      onPressed: (() {
+                        Future.delayed(
+                          Duration(milliseconds: 300),
+                          () {
+                            Get.offAllNamed(Routes.MATERI);
+                          },
+                        );
+                      }),
+                      child: Container(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          onTap: () => Get.offAllNamed(Routes.MATERI),
+                          border: Border.all(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            width: 1,
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage("assets/img/t_materi.png"),
+                            fit: BoxFit.fill,
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(
-                      width: 25,
+                      width: 30,
                     ),
                     //game
-                    Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(
-                          color: Color.fromRGBO(0, 0, 0, 1),
-                          width: 1,
-                        ),
-                        image: DecorationImage(
-                          image: AssetImage("assets/img/t_game.png"),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      child: Material(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.transparent,
-                        child: InkWell(
+                    BouncingWidget(
+                      scaleFactor: 3,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 300),
+                          () {
+                            Get.offAllNamed(Routes.GAME_HOME);
+                          },
+                        );
+                      },
+                      child: Container(
+                        height: 70,
+                        width: 70,
+                        decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          onTap: () => Get.offAllNamed(Routes.TTS),
+                          border: Border.all(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            width: 1,
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage("assets/img/t_game.png"),
+                            fit: BoxFit.fill,
+                          ),
                         ),
                       ),
                     ),
@@ -176,26 +185,29 @@ class HomeView extends GetView<HomeController> {
                   height: 25,
                 ),
                 //profil
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                      color: Color.fromRGBO(0, 0, 0, 1),
-                      width: 1,
-                    ),
-                    image: DecorationImage(
-                      image: AssetImage("assets/img/prof.png"),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                  child: Material(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.transparent,
-                    child: InkWell(
+                BouncingWidget(
+                  scaleFactor: 3,
+                  onPressed: () {
+                    Future.delayed(
+                      Duration(milliseconds: 300),
+                      () {
+                        Get.offAllNamed(Routes.PROFIL);
+                      },
+                    );
+                  },
+                  child: Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      onTap: () => Get.offAllNamed(Routes.PROFIL),
+                      border: Border.all(
+                        color: Color.fromRGBO(0, 0, 0, 1),
+                        width: 1,
+                      ),
+                      image: DecorationImage(
+                        image: AssetImage("assets/img/prof.png"),
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ),
                 ),

@@ -4,7 +4,7 @@ import 'package:crossword_mp/app/pallete/color_pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:word_search/word_search.dart';
-import 'package:audioplayers/audioplayers.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class CrosswordWidget extends StatefulWidget {
   CrosswordWidget({Key key}) : super(key: key);
@@ -18,6 +18,8 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
   int numBoxPerRow = 6;
   double padding = 5;
   Size sizeBox = Size.zero;
+  AssetsAudioPlayer audioPlayer =
+      AssetsAudioPlayer(); // this will create a instance object of a class
 
   ValueNotifier<List<List<String>>> listChars;
   ValueNotifier<List<CrosswordAnswer>> answerList;
@@ -31,6 +33,8 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
     answerList = new ValueNotifier<List<CrosswordAnswer>>([]);
     currentDragObj = new ValueNotifier<CurrentDragObj>(new CurrentDragObj());
     charsDone = new ValueNotifier<List<int>>(new List<int>());
+    audioPlayer.open(Audio('assets/sound/cgtss.mp3'),
+        autoStart: false, showNotification: true);
 
     generateRandomWord();
   }
@@ -41,6 +45,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
       children: [
         Container(
           height: double.infinity,
+          margin: EdgeInsets.only(top: 10),
           decoration: BoxDecoration(
               color: appLightRed.withOpacity(0.3),
               borderRadius: BorderRadius.circular(10),
@@ -49,14 +54,16 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
             children: [
               Column(
                 children: [
-                  AspectRatio(
-                    aspectRatio: 1,
-                    child: Container(
-                      color: Colors.blue,
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.all(padding),
-                      margin: EdgeInsets.all(30),
-                      child: drawCrosswordBox(),
+                  Expanded(
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: Container(
+                        color: Colors.blue,
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.all(padding),
+                        margin: EdgeInsets.all(20),
+                        child: drawCrosswordBox(),
+                      ),
                     ),
                   ),
                   Expanded(
@@ -78,15 +85,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
     currentDragObj.notifyListeners();
   }
 
-  void playAudio() async {
-    final player1 = AudioPlayer();
-    await player1.setSourceUrl(
-        'https://www.mboxdrive.com/Congratulations%20Sound%20Effects%20[Free%20Audio].mp3');
-    await player1.play;
-    await player1.resume();
-  }
-
-  void onDragUpdate(PointerMoveEvent event) async {
+  void onDragUpdate(PointerMoveEvent event) {
     generateLineOnDrag(event);
     int indexFound = answerList.value.indexWhere((answer) {
       return answer.answerLines.join("-") ==
@@ -99,6 +98,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
       answerList.notifyListeners();
       print("selesai ${selesai.length}");
       if (!selesai.contains(indexFound)) {
+        audioPlayer.play();
         selesai.add(indexFound);
         AlertDialog alert = AlertDialog(
           title: Text("Horee :) !!!"),
@@ -122,7 +122,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
             ),
           ],
         );
-        playAudio();
+
         showDialog(context: context, builder: (context) => alert);
       }
     }
@@ -251,7 +251,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                       child: Text(
                         char.toUpperCase(),
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                            fontSize: 12, fontWeight: FontWeight.bold),
                       ),
                     );
                   },
@@ -303,30 +303,43 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
               children: [
                 Container(
                   padding: EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  child: GridView(
+                    padding: EdgeInsets.zero,
+                    physics: ScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: 6 / 1,
+                      crossAxisCount: 1,
+                      mainAxisSpacing: 2,
+                    ),
                     children: [
-                      Text(
-                        '1. Apa nama planet yang kita tinggali saat ini ?',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                          color: value[0].done ? appLightBlue : appBlack,
+                      Container(
+                        child: Text(
+                          '1. Apa nama planet yang kita tinggali saat ini ?',
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: value[0].done ? appLightBlue : appBlack,
+                          ),
                         ),
                       ),
-                      Text(
-                          '2. Apa nama benda yang digunakan untuk membakar sesuatu ?',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: value[1].done ? appLightBlue : appBlack,
-                          )),
-                      Text('3. Seperti apakah bentuk bumi planet itu ?',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: value[2].done ? appLightBlue : appBlack,
-                          )),
+                      Container(
+                        child: Text(
+                            '2. Apa nama benda yang digunakan untuk membakar sesuatu ?',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: value[1].done ? appLightBlue : appBlack,
+                            )),
+                      ),
+                      Container(
+                        child: Text(
+                            '3. Seperti apakah bentuk bumi planet itu ?',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: value[2].done ? appLightBlue : appBlack,
+                            )),
+                      ),
                     ],
                   ),
                 ),

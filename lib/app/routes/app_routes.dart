@@ -11,6 +11,7 @@ abstract class Routes {
   static const PROFIL = _Paths.PROFIL;
   static const MATERI = _Paths.MATERI;
   static const KDKI = _Paths.KDKI;
+  static const GAME_HOME = _Paths.GAME_HOME;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const PROFIL = '/profil';
   static const MATERI = '/materi';
   static const KDKI = '/kdki';
+  static const GAME_HOME = '/game-home';
 }
