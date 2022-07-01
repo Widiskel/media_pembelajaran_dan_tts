@@ -28,7 +28,7 @@ class ProfilView extends GetView<ProfilController> {
                 constraints: BoxConstraints.expand(),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("assets/img/bg.png"),
+                    image: AssetImage("assets/img/Bg1.png"),
                     fit: BoxFit.cover,
                   ),
                 ),

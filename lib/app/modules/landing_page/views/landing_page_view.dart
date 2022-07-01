@@ -42,7 +42,7 @@ class LandingPageView extends GetView<LandingPageController> {
           width: Get.width,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/img/bg.png"),
+              image: AssetImage("assets/img/Bg1.png"),
               fit: BoxFit.cover,
             ),
           ),
@@ -66,11 +66,6 @@ class LandingPageView extends GetView<LandingPageController> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("assets/img/start.png"),
-                    ),
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                      color: Color.fromRGBO(0, 0, 0, 1),
-                      width: 2,
                     ),
                   ),
                 ),

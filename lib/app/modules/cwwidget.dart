@@ -15,8 +15,8 @@ class CrosswordWidget extends StatefulWidget {
 
 class _CrosswordWidgetState extends State<CrosswordWidget> {
   List<int> selesai = [];
-  int numBoxPerRow = 6;
-  double padding = 5;
+  int numBoxPerRow = 15;
+  double padding = 2;
   Size sizeBox = Size.zero;
   AssetsAudioPlayer audioPlayer =
       AssetsAudioPlayer(); // this will create a instance object of a class
@@ -47,29 +47,28 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
           height: double.infinity,
           margin: EdgeInsets.only(top: 10),
           decoration: BoxDecoration(
-              color: appLightRed.withOpacity(0.3),
+              color: appWhite.withOpacity(0.5),
               borderRadius: BorderRadius.circular(10),
               border: Border.all(color: appBlack, width: 2)),
-          child: Stack(
+          child: Column(
             children: [
-              Column(
-                children: [
-                  Expanded(
-                    child: AspectRatio(
-                      aspectRatio: 1,
-                      child: Container(
-                        color: Colors.blue,
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.all(padding),
-                        margin: EdgeInsets.all(20),
-                        child: drawCrosswordBox(),
-                      ),
+              AspectRatio(
+                aspectRatio: 1,
+                child: Container(
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: Container(
+                      color: Colors.blue,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(2),
+                      margin: EdgeInsets.all(20),
+                      child: drawCrosswordBox(),
                     ),
                   ),
-                  Expanded(
-                    child: drawAnswerList(),
-                  ),
-                ],
+                ),
+              ),
+              Flexible(
+                child: drawAnswerList(),
               ),
             ],
           ),
@@ -224,8 +223,8 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               childAspectRatio: 1,
               crossAxisCount: numBoxPerRow,
-              crossAxisSpacing: padding,
-              mainAxisSpacing: padding,
+              crossAxisSpacing: 2,
+              mainAxisSpacing: 2,
             ),
             itemCount: numBoxPerRow * numBoxPerRow,
             physics: NeverScrollableScrollPhysics(),
@@ -251,7 +250,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                       child: Text(
                         char.toUpperCase(),
                         style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.bold),
+                            fontSize: 10, fontWeight: FontWeight.bold),
                       ),
                     );
                   },
@@ -265,7 +264,13 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
   }
 
   void generateRandomWord() {
-    final List<String> wl = ['Bumi', 'korek', 'Bulat'];
+    final List<String> wl = [
+      'undangan',
+      'Resmi',
+      'Menyublim',
+      'Pembangunan',
+      'KapurBarus'
+    ];
     final WSSettings ws = WSSettings(
       width: numBoxPerRow,
       height: numBoxPerRow,
@@ -288,64 +293,77 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
   }
 
   drawAnswerList() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Container(
-        margin: EdgeInsets.only(bottom: 30),
-        decoration: BoxDecoration(
-            color: appWhite.withOpacity(0.5),
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: appBlack, width: 2)),
-        child: ValueListenableBuilder(
-          valueListenable: answerList,
-          builder: (context, List<CrosswordAnswer> value, child) {
-            return Stack(
-              children: [
-                Container(
+    return Container(
+      alignment: Alignment.bottomCenter,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Container(
+          margin: EdgeInsets.only(bottom: 30),
+          decoration: BoxDecoration(
+              color: appWhite.withOpacity(0.5),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: appBlack, width: 2)),
+          child: ValueListenableBuilder(
+            valueListenable: answerList,
+            builder: (context, List<CrosswordAnswer> value, child) {
+              return Container(
                   padding: EdgeInsets.all(10),
-                  child: GridView(
-                    padding: EdgeInsets.zero,
-                    physics: ScrollPhysics(),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 6 / 1,
-                      crossAxisCount: 1,
-                      mainAxisSpacing: 2,
-                    ),
-                    children: [
-                      Container(
-                        child: Text(
-                          '1. Apa nama planet yang kita tinggali saat ini ?',
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: value[0].done ? appLightBlue : appBlack,
-                          ),
+                  child: CustomScrollView(
+                    primary: false,
+                    slivers: <Widget>[
+                      SliverPadding(
+                        padding: const EdgeInsets.all(0),
+                        sliver: SliverGrid.count(
+                          crossAxisCount: 1,
+                          childAspectRatio: 1,
+                          mainAxisSpacing: 0,
+                          children: <Widget>[
+                            Text(
+                              '1.Surat yang berisi permintaan seseorang untuk menghadiri suatu acara.',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                                color: value[0].done ? appLightBlue : appBlack,
+                              ),
+                            ),
+                            Text(
+                                '2. Surat undangan untuk kepentingan kedinasan.',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  color:
+                                      value[1].done ? appLightBlue : appBlack,
+                                )),
+                            Text('3. Perubahan wujud benda padat menjadi gas.',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  color:
+                                      value[2].done ? appLightBlue : appBlack,
+                                )),
+                            Text(
+                                '4. Benda yang terlalu lama dilemari akan mengecil dan menghilang.',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  color:
+                                      value[2].done ? appLightBlue : appBlack,
+                                )),
+                            Text(
+                                '5. Termasuk salah satu kegiatan mengisi kemerdekaan. ',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  color:
+                                      value[2].done ? appLightBlue : appBlack,
+                                )),
+                          ],
                         ),
                       ),
-                      Container(
-                        child: Text(
-                            '2. Apa nama benda yang digunakan untuk membakar sesuatu ?',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: value[1].done ? appLightBlue : appBlack,
-                            )),
-                      ),
-                      Container(
-                        child: Text(
-                            '3. Seperti apakah bentuk bumi planet itu ?',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: value[2].done ? appLightBlue : appBlack,
-                            )),
-                      ),
                     ],
-                  ),
-                ),
-              ],
-            );
-          },
+                  ));
+            },
+          ),
         ),
       ),
     );

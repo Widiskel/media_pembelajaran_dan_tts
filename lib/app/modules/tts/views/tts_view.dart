@@ -33,7 +33,7 @@ class TtsView extends GetView<TtsController> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/img/bg.png"),
+                  image: AssetImage("assets/img/Bg1.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -51,7 +51,7 @@ class TtsView extends GetView<TtsController> {
                 Future.delayed(
                   Duration(milliseconds: 300),
                   () {
-                    Get.offAllNamed(Routes.HOME);
+                    Get.offAllNamed(Routes.GAME_HOME);
                   },
                 );
               },
