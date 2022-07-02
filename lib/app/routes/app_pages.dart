@@ -1,5 +1,21 @@
 import 'package:get/get.dart';
 
+import '../modules/Pembelajaran1/pb1/bindings/pb1_binding.dart';
+import '../modules/Pembelajaran1/pb1/views/pb1_view.dart';
+import '../modules/Pembelajaran1/pb1_bi/bindings/pb1_bi_binding.dart';
+import '../modules/Pembelajaran1/pb1_bi/views/pb1_bi_view.dart';
+import '../modules/Pembelajaran1/pb1_ipa/bindings/pb1_ipa_binding.dart';
+import '../modules/Pembelajaran1/pb1_ipa/views/pb1_ipa_view.dart';
+import '../modules/Pembelajaran1/pb1_ips/bindings/pb1_ips_binding.dart';
+import '../modules/Pembelajaran1/pb1_ips/views/pb1_ips_view.dart';
+import '../modules/Pembelajaran2/pb2/bindings/pb2_binding.dart';
+import '../modules/Pembelajaran2/pb2/views/pb2_view.dart';
+import '../modules/Pembelajaran2/pb2_ipa/bindings/pb2_ipa_binding.dart';
+import '../modules/Pembelajaran2/pb2_ipa/views/pb2_ipa_view.dart';
+import '../modules/Pembelajaran2/pb2_ips/bindings/pb2_ips_binding.dart';
+import '../modules/Pembelajaran2/pb2_ips/views/pb2_ips_view.dart';
+import '../modules/Pembelajaran2/pb2_sbdp/bindings/pb2_sbdp_binding.dart';
+import '../modules/Pembelajaran2/pb2_sbdp/views/pb2_sbdp_view.dart';
 import '../modules/game_home/bindings/game_home_binding.dart';
 import '../modules/game_home/views/game_home_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -10,10 +26,20 @@ import '../modules/landing_page/bindings/landing_page_binding.dart';
 import '../modules/landing_page/views/landing_page_view.dart';
 import '../modules/materi/bindings/materi_binding.dart';
 import '../modules/materi/views/materi_view.dart';
+import '../modules/Pembelajaran3/pb3/bindings/pb3_binding.dart';
+import '../modules/Pembelajaran3/pb3/views/pb3_view.dart';
+import '../modules/Pembelajaran3/pb3_ppkn/bindings/pb3_ppkn_binding.dart';
+import '../modules/Pembelajaran3/pb3_ppkn/views/pb3_ppkn_view.dart';
+import '../modules/Pembelajaran3/pb3_ppkn2/bindings/pb3_ppkn2_binding.dart';
+import '../modules/Pembelajaran3/pb3_ppkn2/views/pb3_ppkn2_view.dart';
 import '../modules/profil/bindings/profil_binding.dart';
 import '../modules/profil/views/profil_view.dart';
 import '../modules/tts/bindings/tts_binding.dart';
 import '../modules/tts/views/tts_view.dart';
+import '../modules/tts2/bindings/tts2_binding.dart';
+import '../modules/tts2/views/tts2_view.dart';
+import '../modules/tts3/bindings/tts3_binding.dart';
+import '../modules/tts3/views/tts3_view.dart';
 
 part 'app_routes.dart';
 
@@ -56,6 +82,71 @@ class AppPages {
       name: _Paths.GAME_HOME,
       page: () => const GameHomeView(),
       binding: GameHomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.PB1,
+      page: () => const Pb1View(),
+      binding: Pb1Binding(),
+    ),
+    GetPage(
+      name: _Paths.TTS2,
+      page: () => const Tts2View(),
+      binding: Tts2Binding(),
+    ),
+    GetPage(
+      name: _Paths.TTS3,
+      page: () => const Tts3View(),
+      binding: Tts3Binding(),
+    ),
+    GetPage(
+      name: _Paths.PB1_BI,
+      page: () => const Pb1BiView(),
+      binding: Pb1BiBinding(),
+    ),
+    GetPage(
+      name: _Paths.PB1_IPA,
+      page: () => const Pb1IpaView(),
+      binding: Pb1IpaBinding(),
+    ),
+    GetPage(
+      name: _Paths.PB1_IPS,
+      page: () => const Pb1IpsView(),
+      binding: Pb1IpsBinding(),
+    ),
+    GetPage(
+      name: _Paths.PB2,
+      page: () => const Pb2View(),
+      binding: Pb2Binding(),
+    ),
+    GetPage(
+      name: _Paths.PB2_IPS,
+      page: () => const Pb2IpsView(),
+      binding: Pb2IpsBinding(),
+    ),
+    GetPage(
+      name: _Paths.PB2_IPA,
+      page: () => const Pb2IpaView(),
+      binding: Pb2IpaBinding(),
+    ),
+    GetPage(
+      name: _Paths.PB2_SBDP,
+      page: () => const Pb2SbdpView(),
+      binding: Pb2SbdpBinding(),
+    ),
+    GetPage(
+      name: _Paths.PB3,
+      page: () => const Pb3View(),
+      binding: Pb3Binding(),
+    ),
+    GetPage(
+      name: _Paths.PB3_PPKN,
+      page: () => const Pb3PpknView(),
+      binding: Pb3PpknBinding(),
+    ),
+    GetPage(
+      name: _Paths.PB3_PPKN2,
+      page: () => const Pb3Ppkn2View(),
+      binding: Pb3Ppkn2Binding(),
     ),
   ];
 }

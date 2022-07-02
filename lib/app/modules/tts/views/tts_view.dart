@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:bouncing_widget/bouncing_widget.dart';
-import 'package:crossword_mp/app/modules/home/views/home_view.dart';
+import 'package:crossword_mp/app/modules/game_home/views/game_home_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:crossword_mp/app/modules/cwwidget.dart';
+import 'package:crossword_mp/app/modules/tts/widget/cwwidget.dart';
 import 'package:crossword_mp/app/pallete/color_pallete.dart';
 
 import '../../../routes/app_pages.dart';
@@ -20,7 +20,7 @@ class TtsView extends GetView<TtsController> {
       onWillPop: () async {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const HomeView()),
+          MaterialPageRoute(builder: (context) => const GameHomeView()),
         );
       },
       child: Scaffold(
@@ -46,7 +46,7 @@ class TtsView extends GetView<TtsController> {
               child: CrosswordWidget(),
             ),
             BouncingWidget(
-              scaleFactor: 3,
+              scaleFactor: 2,
               onPressed: () {
                 Future.delayed(
                   Duration(milliseconds: 300),
@@ -58,13 +58,8 @@ class TtsView extends GetView<TtsController> {
               child: Container(
                 height: 60,
                 width: 60,
-                margin: EdgeInsets.only(left: 10, top: 40),
+                margin: EdgeInsets.only(left: 10, top: 30),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(
-                    color: Color.fromRGBO(0, 0, 0, 1),
-                    width: 1,
-                  ),
                   image: DecorationImage(
                     image: AssetImage("assets/img/back.png"),
                     fit: BoxFit.fill,
@@ -80,13 +75,8 @@ class TtsView extends GetView<TtsController> {
                   width: 120,
                   margin: EdgeInsets.only(top: 40),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                      color: Color.fromRGBO(0, 0, 0, 1),
-                      width: 1,
-                    ),
                     image: DecorationImage(
-                      image: AssetImage("assets/img/i_game.png"),
+                      image: AssetImage("assets/img/ogame.png"),
                       fit: BoxFit.fill,
                     ),
                   ),

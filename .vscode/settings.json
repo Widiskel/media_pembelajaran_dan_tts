@@ -1,4 +1,5 @@
 {
     "cmake.configureOnOpen": false,
+    "dart.flutterSdkPath": "D:\\flutter\\flutter",
 
 }

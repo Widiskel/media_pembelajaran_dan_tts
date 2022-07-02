@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_import, sort_child_properties_last
 
+import 'dart:io';
+
 import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +16,7 @@ class LandingPageView extends GetView<LandingPageController> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () async {
+      onWillPop: () {
         return showDialog(
               context: context,
               builder: (context) => new AlertDialog(
@@ -27,7 +29,7 @@ class LandingPageView extends GetView<LandingPageController> {
                   ),
                   SizedBox(height: 30),
                   new GestureDetector(
-                    onTap: () => Navigator.of(context).pop(true),
+                    onTap: () => exit(0),
                     child: Text("YES"),
                   ),
                   SizedBox(height: 30),

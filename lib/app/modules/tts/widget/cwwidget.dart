@@ -15,7 +15,7 @@ class CrosswordWidget extends StatefulWidget {
 
 class _CrosswordWidgetState extends State<CrosswordWidget> {
   List<int> selesai = [];
-  int numBoxPerRow = 15;
+  int numBoxPerRow = 12;
   double padding = 2;
   Size sizeBox = Size.zero;
   AssetsAudioPlayer audioPlayer =
@@ -33,8 +33,10 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
     answerList = new ValueNotifier<List<CrosswordAnswer>>([]);
     currentDragObj = new ValueNotifier<CurrentDragObj>(new CurrentDragObj());
     charsDone = new ValueNotifier<List<int>>(new List<int>());
-    audioPlayer.open(Audio('assets/sound/cgtss.mp3'),
-        autoStart: false, showNotification: true);
+    audioPlayer.open(
+      Audio('assets/sound/cgtss.mp3'),
+      autoStart: false,
+    );
 
     generateRandomWord();
   }
@@ -123,6 +125,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
         );
 
         showDialog(context: context, builder: (context) => alert);
+        audioPlayer.dispose();
       }
     }
   }
@@ -268,8 +271,8 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
       'undangan',
       'Resmi',
       'Menyublim',
-      'Pembangunan',
-      'KapurBarus'
+      'KapurBarus',
+      'Pembangunan'
     ];
     final WSSettings ws = WSSettings(
       width: numBoxPerRow,
@@ -347,15 +350,15 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
                                   color:
-                                      value[2].done ? appLightBlue : appBlack,
+                                      value[3].done ? appLightBlue : appBlack,
                                 )),
                             Text(
-                                '5. Termasuk salah satu kegiatan mengisi kemerdekaan. ',
+                                '5. Termasuk salah satu kegiatan mengisi kemerdekaan.',
                                 style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
                                   color:
-                                      value[2].done ? appLightBlue : appBlack,
+                                      value[4].done ? appLightBlue : appBlack,
                                 )),
                           ],
                         ),

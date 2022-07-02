@@ -12,6 +12,19 @@ abstract class Routes {
   static const MATERI = _Paths.MATERI;
   static const KDKI = _Paths.KDKI;
   static const GAME_HOME = _Paths.GAME_HOME;
+  static const PB1 = _Paths.PB1;
+  static const TTS2 = _Paths.TTS2;
+  static const TTS3 = _Paths.TTS3;
+  static const PB1_BI = _Paths.PB1_BI;
+  static const PB1_IPA = _Paths.PB1_IPA;
+  static const PB1_IPS = _Paths.PB1_IPS;
+  static const PB2 = _Paths.PB2;
+  static const PB2_IPS = _Paths.PB2_IPS;
+  static const PB2_IPA = _Paths.PB2_IPA;
+  static const PB2_SBDP = _Paths.PB2_SBDP;
+  static const PB3 = _Paths.PB3;
+  static const PB3_PPKN = _Paths.PB3_PPKN;
+  static const PB3_PPKN2 = _Paths.PB3_PPKN2;
 }
 
 abstract class _Paths {
@@ -23,4 +36,17 @@ abstract class _Paths {
   static const MATERI = '/materi';
   static const KDKI = '/kdki';
   static const GAME_HOME = '/game-home';
+  static const PB1 = '/pb1';
+  static const TTS2 = '/tts2';
+  static const TTS3 = '/tts3';
+  static const PB1_BI = '/pb1-bi';
+  static const PB1_IPA = '/pb1-ipa';
+  static const PB1_IPS = '/pb1-ips';
+  static const PB2 = '/pb2';
+  static const PB2_IPS = '/pb2-ips';
+  static const PB2_IPA = '/pb2-ipa';
+  static const PB2_SBDP = '/pb2-sbdp';
+  static const PB3 = '/pb3';
+  static const PB3_PPKN = '/pb3-ppkn';
+  static const PB3_PPKN2 = '/pb3-ppkn2';
 }

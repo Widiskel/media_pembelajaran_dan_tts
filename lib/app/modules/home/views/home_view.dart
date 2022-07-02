@@ -1,9 +1,12 @@
 // ignore_for_file: unused_import
 
+import 'dart:io';
+
 import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:crossword_mp/app/pallete/color_pallete.dart';
 import 'package:crossword_mp/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
 
@@ -27,7 +30,7 @@ class HomeView extends GetView<HomeController> {
                   ),
                   SizedBox(height: 30),
                   new GestureDetector(
-                    onTap: () => Navigator.of(context).pop(true),
+                    onTap: () => exit(0),
                     child: Text("YES"),
                   ),
                   SizedBox(height: 30),
@@ -41,7 +44,6 @@ class HomeView extends GetView<HomeController> {
           children: [
             Container(
               alignment: Alignment.center,
-              constraints: BoxConstraints.expand(),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/img/Bg1.png"),
@@ -102,7 +104,9 @@ class HomeView extends GetView<HomeController> {
                             onPressed: () {
                               Future.delayed(
                                 Duration(milliseconds: 300),
-                                () {},
+                                () {
+                                  Get.offAllNamed(Routes.KDKI);
+                                },
                               );
                             },
                             child: Container(
