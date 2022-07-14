@@ -21,4 +21,8 @@ dependencies:
   get: ^4.6.5
   get_cli: ^1.8.1
   photo_view: ^0.14.0
+<<<<<<< HEAD
   assets_audio_player: ^3.0.4+4
+=======
+  assets_audio_player: ^3.0.4+4
+>>>>>>> 21c3229d8aad05e9313e5650b1cfbc05b7d3218d
