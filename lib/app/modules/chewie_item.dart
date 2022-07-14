@@ -58,12 +58,15 @@ class _ChewieListItemState extends State<ChewieListItem> {
 
   @override
   void dispose() {
-    super.dispose();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
+    widget.videoPlayerController.removeListener(() {});
+    _chewieController.isPlaying
+        ? _chewieController.pause()
+        : _chewieController.dispose();
 
-    widget.videoPlayerController.dispose();
-    _chewieController.dispose();
+    print("DISSPOOOOSSEEEE");
+    super.dispose();
   }
 }
