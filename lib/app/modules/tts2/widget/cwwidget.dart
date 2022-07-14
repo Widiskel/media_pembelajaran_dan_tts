@@ -1,14 +1,17 @@
 // ignore_for_file: invalid_use_of_protected_member, deprecated_member_use, invalid_use_of_visible_for_testing_member
 
 import 'package:crossword_mp/app/pallete/color_pallete.dart';
+import 'package:crossword_mp/main.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:word_search/word_search.dart';
-import 'package:assets_audio_player/assets_audio_player.dart';
+
+import '../../player.dart';
 
 class CrosswordWidget extends StatefulWidget {
   CrosswordWidget({Key key}) : super(key: key);
-
+  final aPlay = Get.find<APlayer>();
   @override
   _CrosswordWidgetState createState() => _CrosswordWidgetState();
 }
@@ -18,8 +21,6 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
   int numBoxPerRow = 15;
   double padding = 2;
   Size sizeBox = Size.zero;
-  AssetsAudioPlayer audioPlayer1 =
-      AssetsAudioPlayer(); // this will create a instance object of a class
 
   ValueNotifier<List<List<String>>> listChars;
   ValueNotifier<List<CrosswordAnswer>> answerList;
@@ -33,8 +34,6 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
     answerList = new ValueNotifier<List<CrosswordAnswer>>([]);
     currentDragObj = new ValueNotifier<CurrentDragObj>(new CurrentDragObj());
     charsDone = new ValueNotifier<List<int>>(new List<int>());
-    audioPlayer1.open(Audio('assets/sound/cgtss.mp3'), autoStart: false);
-
     generateRandomWord();
   }
 
@@ -96,8 +95,8 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
       answerList.notifyListeners();
       print("selesai ${selesai.length}");
       if (!selesai.contains(indexFound)) {
-        audioPlayer1.play();
         selesai.add(indexFound);
+        aPlay.congrats();
         AlertDialog alert = AlertDialog(
           title: Text("Horee :) !!!"),
           content: Container(
@@ -122,7 +121,6 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
         );
 
         showDialog(context: context, builder: (context) => alert);
-        audioPlayer1.dispose();
       }
     }
   }
@@ -321,39 +319,50 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                             Text(
                               '1.Warga negara yang memiliki tugas belajar dengan sungguh-sungguh.',
                               style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                color: value[0].done ? appLightBlue : appBlack,
-                              ),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  color:
+                                      value[0].done ? appLightBlue : appBlack,
+                                  decoration: value[0].done
+                                      ? TextDecoration.lineThrough
+                                      : TextDecoration.none),
                             ),
                             Text('2.Kepanjangan Pramuka. ',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color:
-                                      value[1].done ? appLightBlue : appBlack,
-                                )),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        value[1].done ? appLightBlue : appBlack,
+                                    decoration: value[1].done
+                                        ? TextDecoration.lineThrough
+                                        : TextDecoration.none)),
                             Text('3. Perubahan wujud benda gas menjadi padat.',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color:
-                                      value[2].done ? appLightBlue : appBlack,
-                                )),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        value[2].done ? appLightBlue : appBlack,
+                                    decoration: value[2].done
+                                        ? TextDecoration.lineThrough
+                                        : TextDecoration.none)),
                             Text('4. Contoh pengkristalan.',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color:
-                                      value[3].done ? appLightBlue : appBlack,
-                                )),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        value[3].done ? appLightBlue : appBlack,
+                                    decoration: value[3].done
+                                        ? TextDecoration.lineThrough
+                                        : TextDecoration.none)),
                             Text('5. Seni yang berbentuk dua dimensi.',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color:
-                                      value[4].done ? appLightBlue : appBlack,
-                                )),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        value[4].done ? appLightBlue : appBlack,
+                                    decoration: value[4].done
+                                        ? TextDecoration.lineThrough
+                                        : TextDecoration.none)),
                           ],
                         ),
                       ),

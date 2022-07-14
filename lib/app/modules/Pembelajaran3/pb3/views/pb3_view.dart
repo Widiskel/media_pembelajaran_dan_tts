@@ -1,7 +1,7 @@
 // ignore_for_file: missing_return
 
 import 'package:bouncing_widget/bouncing_widget.dart';
-import 'package:crossword_mp/app/modules/materi/views/materi_view.dart';
+import 'package:crossword_mp/app/modules/player.dart';
 import 'package:crossword_mp/app/pallete/color_pallete.dart';
 import 'package:crossword_mp/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -11,15 +11,14 @@ import 'package:get/get.dart';
 import '../controllers/pb3_controller.dart';
 
 class Pb3View extends GetView<Pb3Controller> {
-  const Pb3View({Key key}) : super(key: key);
+  Pb3View({Key key}) : super(key: key);
+  final aPlay = Get.find<APlayer>();
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const MateriView()),
-        );
+        Get.back();
       },
       child: Scaffold(
           body: Stack(
@@ -30,93 +29,206 @@ class Pb3View extends GetView<Pb3Controller> {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/img/Bg1.png"),
+                image: AssetImage("assets/img/bg 1.png"),
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          BouncingWidget(
-            scaleFactor: 2,
-            onPressed: () {
-              Future.delayed(
-                Duration(milliseconds: 300),
-                () {
-                  Get.offAllNamed(Routes.MATERI);
+          Obx(
+            () => Align(
+              alignment: Alignment.topRight,
+              child: BouncingWidget(
+                stayOnBottom: false,
+                onPressed: () {
+                  Future.delayed(
+                    Duration(milliseconds: 300),
+                    () {
+                      aPlay.butstat.toggle();
+                      aPlay.bgmPlayorPause();
+                    },
+                  );
                 },
-              );
-            },
-            child: Container(
-              height: 60,
-              width: 60,
-              margin: EdgeInsets.only(left: 10, top: 30),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/img/back.png"),
-                  fit: BoxFit.fill,
+                scaleFactor: 2,
+                child: Container(
+                  height: Get.width * 0.13,
+                  width: Get.width * 0.13,
+                  margin: EdgeInsets.all(30),
+                  decoration: BoxDecoration(
+                    //color: appRed,
+                    image: DecorationImage(
+                      image: AssetImage('${aPlay.setImg()}'),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 100),
-            height: 70,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/img/pb3.png'),
-              ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 30, right: 30, bottom: 30, top: 190),
-            padding: EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: appWhite.withOpacity(0.5),
-            ),
-            child: Column(
-              children: [
-                Flexible(
-                  child: BouncingWidget(
-                    scaleFactor: 2,
+          Align(
+            alignment: Alignment.topLeft,
+            child: Container(
+              child: Row(
+                children: [
+                  BouncingWidget(
+                    stayOnBottom: false,
                     onPressed: () {
                       Future.delayed(
-                        Duration(milliseconds: 300),
+                        Duration(milliseconds: 400),
                         () {
-                          Get.offAndToNamed(Routes.PB3_PPKN);
+                          aPlay.clickPlay();
+                          Get.back();
                         },
                       );
                     },
+                    scaleFactor: 2,
                     child: Container(
-                      height: 60,
-                      margin: EdgeInsets.symmetric(vertical: 20),
+                      height: Get.width * 0.13,
+                      width: Get.width * 0.13,
+                      margin: EdgeInsets.only(top: 30, left: 30, bottom: 30),
                       decoration: BoxDecoration(
+                        //color: appRed,
                         image: DecorationImage(
-                          image: AssetImage('assets/img/PPKN.png'),
+                          image: AssetImage('assets/img/back 1.png'),
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ),
                   ),
-                ),
-                Flexible(
-                  child: BouncingWidget(
-                    scaleFactor: 2,
+                  BouncingWidget(
+                    stayOnBottom: false,
                     onPressed: () {
                       Future.delayed(
-                        Duration(milliseconds: 300),
+                        Duration(milliseconds: 400),
                         () {
-                          Get.offAllNamed(Routes.PB3_PPKN2);
+                          aPlay.clickPlay();
+                          Get.toNamed(Routes.HOME);
                         },
                       );
                     },
+                    scaleFactor: 2,
                     child: Container(
-                      height: 60,
-                      margin: EdgeInsets.symmetric(vertical: 20),
+                      height: Get.width * 0.13,
+                      width: Get.width * 0.13,
+                      margin: EdgeInsets.only(top: 30, bottom: 30, left: 10),
                       decoration: BoxDecoration(
+                        //color: appRed,
                         image: DecorationImage(
-                          image: AssetImage('assets/img/PPKN.png'),
+                          image: AssetImage('assets/img/TOMBOL HOME 1.png'),
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  height: 50,
+                  margin: EdgeInsets.only(
+                    left: Get.width * 0.15,
+                    right: Get.width * 0.15,
+                  ),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/img/pembelajaran 3.3.png'),
+                        fit: BoxFit.contain),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    left: Get.width * 0.15,
+                    right: Get.width * 0.15,
+                  ),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                        color: appWhite.withOpacity(0.46), width: 20),
+                    borderRadius: BorderRadius.circular(30),
+                    color: appGrey.withOpacity(0.69),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        child: BouncingWidget(
+                          scaleFactor: 2,
+                          onPressed: () {
+                            Future.delayed(
+                              Duration(milliseconds: 300),
+                              () {
+                                aPlay.clickPlay();
+                                Get.toNamed(Routes.PB3_PPKN);
+                              },
+                            );
+                          },
+                          child: Container(
+                            height: 55,
+                            margin:
+                                EdgeInsets.only(left: 30, right: 30, top: 20),
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('assets/img/ips 1.png'),
+                                  fit: BoxFit.contain),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: BouncingWidget(
+                          scaleFactor: 2,
+                          onPressed: () {
+                            Future.delayed(
+                              Duration(milliseconds: 300),
+                              () {
+                                aPlay.clickPlay();
+                                Get.toNamed(Routes.PB3_PPKN2);
+                              },
+                            );
+                          },
+                          child: Container(
+                            height: 55,
+                            margin:
+                                EdgeInsets.only(left: 30, right: 30, top: 10),
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/img/bahasa indonesia 1.png'),
+                                  fit: BoxFit.contain),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: BouncingWidget(
+                          scaleFactor: 2,
+                          onPressed: () {
+                            Future.delayed(
+                              Duration(milliseconds: 300),
+                              () {
+                                aPlay.clickPlay();
+                                Get.toNamed(Routes.PB3_PPKN3);
+                              },
+                            );
+                          },
+                          child: Container(
+                            height: 55,
+                            margin: EdgeInsets.only(
+                                left: 30, right: 30, top: 10, bottom: 20),
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('assets/img/PPKN 1.png'),
+                                  fit: BoxFit.contain),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

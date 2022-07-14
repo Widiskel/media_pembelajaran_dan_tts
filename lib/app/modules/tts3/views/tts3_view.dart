@@ -1,24 +1,22 @@
 import 'package:bouncing_widget/bouncing_widget.dart';
-import 'package:crossword_mp/app/modules/game_home/views/game_home_view.dart';
 import 'package:crossword_mp/app/modules/tts3/widget/cwwidget.dart';
 import 'package:crossword_mp/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../player.dart';
 import '../controllers/tts3_controller.dart';
 
 class Tts3View extends GetView<Tts3Controller> {
-  const Tts3View({Key key}) : super(key: key);
+  Tts3View({Key key}) : super(key: key);
+  final aPlay = Get.find<APlayer>();
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       // ignore: missing_return
       onWillPop: () async {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const GameHomeView()),
-        );
+        Get.toNamed(Routes.GAME_HOME);
       },
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -30,63 +28,129 @@ class Tts3View extends GetView<Tts3Controller> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/img/Bg1.png"),
+                  image: AssetImage("assets/img/bg 1.png"),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            Container(
-              padding: EdgeInsets.all(20),
-              margin: EdgeInsets.only(top: 80),
-              height: double.infinity,
-              width: double.maxFinite,
-              child: CrosswordWidget(),
-            ),
-            BouncingWidget(
-              scaleFactor: 2,
-              onPressed: () {
-                Future.delayed(
-                  Duration(milliseconds: 300),
-                  () {
-                    Get.offAllNamed(Routes.GAME_HOME);
+            Obx(
+              () => Align(
+                alignment: Alignment.topRight,
+                child: BouncingWidget(
+                  stayOnBottom: false,
+                  onPressed: () {
+                    Future.delayed(
+                      Duration(milliseconds: 300),
+                      () {
+                        aPlay.butstat.toggle();
+                        aPlay.bgmPlayorPause();
+                      },
+                    );
                   },
-                );
-              },
-              child: Container(
-                height: 60,
-                width: 60,
-                margin: EdgeInsets.only(left: 10, top: 30),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/img/back.png"),
-                    fit: BoxFit.fill,
+                  scaleFactor: 2,
+                  child: Container(
+                    height: Get.width * 0.13,
+                    width: Get.width * 0.13,
+                    margin: EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      //color: appRed,
+                      image: DecorationImage(
+                        image: AssetImage('${aPlay.setImg()}'),
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 60,
-                  width: 120,
-                  margin: EdgeInsets.only(top: 40),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/img/ogame.png"),
-                      fit: BoxFit.fill,
+            Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                child: Row(
+                  children: [
+                    BouncingWidget(
+                      stayOnBottom: false,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 400),
+                          () {
+                            aPlay.clickPlay();
+                            Get.back();
+                          },
+                        );
+                      },
+                      scaleFactor: 2,
+                      child: Container(
+                        height: Get.width * 0.13,
+                        width: Get.width * 0.13,
+                        margin: EdgeInsets.only(top: 30, left: 30, bottom: 30),
+                        decoration: BoxDecoration(
+                          //color: appRed,
+                          image: DecorationImage(
+                            image: AssetImage('assets/img/back 1.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                  child: Material(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.transparent,
-                    child: InkWell(
-                      borderRadius: BorderRadius.circular(30),
-                      onTap: () {},
+                    BouncingWidget(
+                      stayOnBottom: false,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 400),
+                          () {
+                            aPlay.clickPlay();
+                            Get.offAllNamed(Routes.HOME);
+                          },
+                        );
+                      },
+                      scaleFactor: 2,
+                      child: Container(
+                        height: Get.width * 0.13,
+                        width: Get.width * 0.13,
+                        margin: EdgeInsets.only(top: 30, bottom: 30, left: 10),
+                        decoration: BoxDecoration(
+                          //color: appRed,
+                          image: DecorationImage(
+                            image: AssetImage('assets/img/TOMBOL HOME 1.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
+              ),
+            ),
+            Container(
+              height: Get.height * 0.9,
+              margin: EdgeInsets.only(top: Get.height * 0.13),
+              alignment: Alignment.center,
+              child: Column(
+                children: [
+                  Container(
+                    height: Get.height * 0.1,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/img/gaame 1.png"),
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: Get.height * 0.8,
+                      child: Container(
+                        padding: EdgeInsets.only(
+                            left: 20, right: 20, bottom: 10, top: 0),
+                        height: double.infinity,
+                        width: double.maxFinite,
+                        child: CrosswordWidget(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

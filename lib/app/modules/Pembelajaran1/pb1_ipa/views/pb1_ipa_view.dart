@@ -1,7 +1,7 @@
 // ignore_for_file: missing_return
 
 import 'package:bouncing_widget/bouncing_widget.dart';
-import 'package:crossword_mp/app/modules/Pembelajaran1/pb1/views/pb1_view.dart';
+import 'package:crossword_mp/app/modules/player.dart';
 import 'package:crossword_mp/app/pallete/color_pallete.dart';
 import 'package:crossword_mp/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -9,19 +9,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
-
+import 'package:video_player/video_player.dart';
+import '../../../chewie_item.dart';
 import '../controllers/pb1_ipa_controller.dart';
 
 class Pb1IpaView extends GetView<Pb1IpaController> {
-  const Pb1IpaView({Key key}) : super(key: key);
+  Pb1IpaView({Key key}) : super(key: key);
+
+  final aPlay = Get.find<APlayer>();
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const Pb1View()),
-        );
+        Get.back();
       },
       child: Scaffold(
         body: Stack(
@@ -32,40 +32,97 @@ class Pb1IpaView extends GetView<Pb1IpaController> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/img/Bg1.png"),
+                  image: AssetImage("assets/img/bg 1.png"),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            BouncingWidget(
-              scaleFactor: 2,
-              onPressed: () {
-                Future.delayed(
-                  Duration(milliseconds: 300),
-                  () {
-                    Get.offAllNamed(Routes.PB1);
-                  },
-                );
-              },
-              child: Container(
-                height: 60,
-                width: 60,
-                margin: EdgeInsets.only(left: 10, top: 30),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/img/back.png"),
-                    fit: BoxFit.fill,
+            Align(
+              alignment: Alignment.topRight,
+              child: BouncingWidget(
+                stayOnBottom: false,
+                onPressed: () {
+                  Future.delayed(
+                    Duration(milliseconds: 400),
+                    () {
+                      aPlay.butstat.toggle();
+                      aPlay.bgmPlayorPause();
+                    },
+                  );
+                },
+                scaleFactor: 2,
+                child: Container(
+                  height: Get.width * 0.13,
+                  width: Get.width * 0.13,
+                  margin: EdgeInsets.all(30),
+                  decoration: BoxDecoration(
+                    //color: appRed,
+                    image: DecorationImage(
+                      image: AssetImage('assets/img/musik 1.png'),
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ),
             ),
-            Container(
-              width: double.maxFinite,
-              height: double.maxFinite,
-              margin: EdgeInsets.only(left: 25, right: 25, top: 90, bottom: 30),
-              decoration: BoxDecoration(
-                  color: appLightBlue.withOpacity(0.9),
-                  borderRadius: BorderRadius.circular(60)),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                child: Row(
+                  children: [
+                    BouncingWidget(
+                      stayOnBottom: false,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 400),
+                          () {
+                            aPlay.clickPlay();
+                            Get.back();
+                          },
+                        );
+                      },
+                      scaleFactor: 2,
+                      child: Container(
+                        height: Get.width * 0.13,
+                        width: Get.width * 0.13,
+                        margin: EdgeInsets.only(top: 30, left: 30, bottom: 30),
+                        decoration: BoxDecoration(
+                          //color: appRed,
+                          image: DecorationImage(
+                            image: AssetImage('assets/img/back 1.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
+                    BouncingWidget(
+                      stayOnBottom: false,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 400),
+                          () {
+                            aPlay.clickPlay();
+                            Get.toNamed(Routes.HOME);
+                          },
+                        );
+                      },
+                      scaleFactor: 2,
+                      child: Container(
+                        height: Get.width * 0.13,
+                        width: Get.width * 0.13,
+                        margin: EdgeInsets.only(top: 30, bottom: 30, left: 10),
+                        decoration: BoxDecoration(
+                          //color: appRed,
+                          image: DecorationImage(
+                            image: AssetImage('assets/img/TOMBOL HOME 1.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
             Container(
               width: double.maxFinite,
@@ -74,7 +131,8 @@ class Pb1IpaView extends GetView<Pb1IpaController> {
               margin: EdgeInsets.only(left: 32, right: 32, top: 95, bottom: 35),
               decoration: BoxDecoration(
                   color: appWhite.withOpacity(0.9),
-                  borderRadius: BorderRadius.circular(60)),
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: appCyan, width: 10)),
               child: Scrollbar(
                 thickness: 10,
                 child: SingleChildScrollView(
@@ -82,41 +140,31 @@ class Pb1IpaView extends GetView<Pb1IpaController> {
                   child: Column(
                     children: [
                       Text(
-                        '''Perubahan wujud benda (Menyblim)
-\nPerubahan wujud benda terjadi di sekitar kita tanpa kita sadari. Perubahan wujud benda merupakan suatu perubahan alami karena fenomena alam yang terjadi di sekeliling kita. Salah satu perubahan wujud benda yaitu menyublim.
-\nMenyublim adalah perubahan wujud benda dari benda padat menjadi gas.
-
-              ''',
+                        '''Perubahan wujud benda \n(Menyblim)''',
                         style: new TextStyle(
+                          fontWeight: FontWeight.bold,
                           fontSize: 12.0,
                           color: appBlack,
                         ),
-                      ),
-                      AspectRatio(
-                        aspectRatio: 1,
-                        child: PhotoViewGallery.builder(
-                          backgroundDecoration:
-                              BoxDecoration(color: Colors.transparent),
-                          scrollPhysics: BouncingScrollPhysics(),
-                          builder: (BuildContext context, int index) {
-                            return PhotoViewGalleryPageOptions(
-                              maxScale: PhotoViewComputedScale.contained * 10,
-                              minScale: PhotoViewComputedScale.contained,
-                              imageProvider:
-                                  AssetImage("assets/img/pbii_i.jpg"),
-                              initialScale: PhotoViewComputedScale.contained,
-                            );
-                          },
-                          itemCount: 1,
-                        ),
+                        textAlign: TextAlign.center,
                       ),
                       Text(
-                        '''Es kering ini berbeda dengan es batu biasa yang terbuat dari air. Es kering berasal dari karbondioksida yang berbentuk padat. Jika dibiarkan terus-menerus maka akan habis.
-              ''',
+                        '''\n
+    Perubahan wujud benda terjadi di sekitar kita tanpa kita sadari. Perubahan wujud benda merupakan suatu perubahan alami karena fenomena alam yang terjadi di sekeliling kita. Salah satu perubahan wujud benda yaitu menyublim.
+  Menyublim adalah perubahan wujud benda dari benda padat menjadi gas.''',
                         style: new TextStyle(
                           fontSize: 12.0,
                           color: appBlack,
                         ),
+                        textAlign: TextAlign.justify,
+                      ),
+                      Text(
+                        '''''',
+                        style: new TextStyle(
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.justify,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -129,8 +177,8 @@ class Pb1IpaView extends GetView<Pb1IpaController> {
                               maxScale: PhotoViewComputedScale.contained * 10,
                               minScale: PhotoViewComputedScale.contained,
                               imageProvider:
-                                  AssetImage("assets/img/pbii_ii.jpg"),
-                              initialScale: PhotoViewComputedScale.contained,
+                                  AssetImage("assets/img/pb1_ipa_1.jpg"),
+                              initialScale: PhotoViewComputedScale.covered,
                             );
                           },
                           itemCount: 1,
@@ -138,11 +186,65 @@ class Pb1IpaView extends GetView<Pb1IpaController> {
                       ),
                       Text(
                         '''
-Kapur barus yang diletakkan di lemari dalam beberapa hari akan mengecil bahkan menghilang dari lemari.
-''',
+    Es kering ini berbeda dengan es batu biasa yang terbuat dari air. Es kering berasal dari karbondioksida yang berbentuk padat. Jika dibiarkan terus-menerus maka akan habis.''',
                         style: new TextStyle(
                           fontSize: 12.0,
                           color: appBlack,
+                        ),
+                        textAlign: TextAlign.justify,
+                      ),
+                      Text(
+                        '''''',
+                        style: new TextStyle(
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.justify,
+                      ),
+                      AspectRatio(
+                        aspectRatio: 1,
+                        child: PhotoViewGallery.builder(
+                          backgroundDecoration:
+                              BoxDecoration(color: Colors.transparent),
+                          scrollPhysics: BouncingScrollPhysics(),
+                          builder: (BuildContext context, int index) {
+                            return PhotoViewGalleryPageOptions(
+                              maxScale: PhotoViewComputedScale.contained * 10,
+                              minScale: PhotoViewComputedScale.contained,
+                              imageProvider:
+                                  AssetImage("assets/img/pb1_ipa_2.jpg"),
+                              initialScale: PhotoViewComputedScale.covered,
+                            );
+                          },
+                          itemCount: 1,
+                        ),
+                      ),
+                      Text(
+                        ''' 
+  Kapur barus yang diletakkan di lemari dalam beberapa hari akan mengecil bahkan menghilang dari lemari.''',
+                        style: new TextStyle(
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.justify,
+                      ),
+                      Text(
+                        '''\n\nVideo Percobaan\n''',
+                        style: new TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Container(
+                        width: Get.width,
+                        height: Get.width * 0.8,
+                        child: ChewieListItem(
+                          videoPlayerController: VideoPlayerController.asset(
+                            'assets/video/pbv1.mp4',
+                          ),
+                          looping: true,
                         ),
                       ),
                     ],

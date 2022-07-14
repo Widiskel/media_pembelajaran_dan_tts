@@ -1,7 +1,7 @@
 // ignore_for_file: missing_return
 
 import 'package:bouncing_widget/bouncing_widget.dart';
-import 'package:crossword_mp/app/modules/Pembelajaran1/pb1/views/pb1_view.dart';
+import 'package:crossword_mp/app/modules/player.dart';
 import 'package:crossword_mp/app/pallete/color_pallete.dart';
 import 'package:crossword_mp/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -13,15 +13,14 @@ import 'package:photo_view/photo_view_gallery.dart';
 import '../controllers/pb1_ips_controller.dart';
 
 class Pb1IpsView extends GetView<Pb1IpsController> {
-  const Pb1IpsView({Key key}) : super(key: key);
+  Pb1IpsView({Key key}) : super(key: key);
+
+  final aPlay = Get.find<APlayer>();
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const Pb1View()),
-        );
+        Get.back();
       },
       child: Scaffold(
         body: Stack(
@@ -32,41 +31,101 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/img/Bg1.png"),
+                  image: AssetImage("assets/img/bg 1.png"),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            BouncingWidget(
-              scaleFactor: 2,
-              onPressed: () {
-                Future.delayed(
-                  Duration(milliseconds: 300),
-                  () {
-                    Get.offAllNamed(Routes.PB1);
-                  },
-                );
-              },
-              child: Container(
-                height: 60,
-                width: 60,
-                margin: EdgeInsets.only(left: 10, top: 30),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/img/back.png"),
-                    fit: BoxFit.fill,
+            Align(
+              alignment: Alignment.topRight,
+              child: BouncingWidget(
+                stayOnBottom: false,
+                onPressed: () {
+                  Future.delayed(
+                    Duration(milliseconds: 400),
+                    () {
+                      aPlay.butstat.toggle();
+                      aPlay.bgmPlayorPause();
+                    },
+                  );
+                },
+                scaleFactor: 2,
+                child: Container(
+                  height: Get.width * 0.13,
+                  width: Get.width * 0.13,
+                  margin: EdgeInsets.all(30),
+                  decoration: BoxDecoration(
+                    //color: appRed,
+                    image: DecorationImage(
+                      image: AssetImage('assets/img/musik 1.png'),
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ),
             ),
-            Container(
-              width: double.maxFinite,
-              height: double.maxFinite,
-              margin: EdgeInsets.only(left: 25, right: 25, top: 90, bottom: 30),
-              decoration: BoxDecoration(
-                  color: appLightBlue.withOpacity(0.9),
-                  borderRadius: BorderRadius.circular(60)),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                child: Row(
+                  children: [
+                    BouncingWidget(
+                      stayOnBottom: false,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 400),
+                          () {
+                            aPlay.clickPlay();
+                            Get.back();
+                          },
+                        );
+                      },
+                      scaleFactor: 2,
+                      child: Container(
+                        height: Get.width * 0.13,
+                        width: Get.width * 0.13,
+                        margin: EdgeInsets.only(top: 30, left: 30, bottom: 30),
+                        decoration: BoxDecoration(
+                          //color: appRed,
+                          image: DecorationImage(
+                            image: AssetImage('assets/img/back 1.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
+                    BouncingWidget(
+                      stayOnBottom: false,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 400),
+                          () {
+                            aPlay.clickPlay();
+                            Get.toNamed(Routes.HOME);
+                          },
+                        );
+                      },
+                      scaleFactor: 2,
+                      child: Container(
+                        height: Get.width * 0.13,
+                        width: Get.width * 0.13,
+                        margin: EdgeInsets.only(top: 30, bottom: 30, left: 10),
+                        decoration: BoxDecoration(
+                          //color: appRed,
+                          image: DecorationImage(
+                            image: AssetImage('assets/img/TOMBOL HOME 1.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
+            //head
+            //body
+
             Container(
               width: double.maxFinite,
               padding: EdgeInsets.all(30),
@@ -74,7 +133,8 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
               margin: EdgeInsets.only(left: 32, right: 32, top: 95, bottom: 35),
               decoration: BoxDecoration(
                   color: appWhite.withOpacity(0.9),
-                  borderRadius: BorderRadius.circular(60)),
+                  borderRadius: BorderRadius.circular(30),
+                  border: Border.all(color: appCyan, width: 10)),
               child: Scrollbar(
                 thickness: 10,
                 child: SingleChildScrollView(
@@ -82,18 +142,33 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                   child: Column(
                     children: [
                       Text(
+                        '''Kegiatan Mengisi Kemerdekaan''',
+                        style: new TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
                         '''
-Kegiatan Mengisi Kemerdekaan
-\nKemerdekaan Negara Kesatuan Republik Indonesia didapatkan dengan cara yang tidak mudah dan tidak murah. Bertahun-tahun para pemimpin bangsa berupaya dengan berbagai macam cara untuk melepaskan diri dari penjajahan bangsa lain. Ribuan nyawa manusia juga telah melayang dalam upaya ini.
-\nGenerasi penerus bangsa harus mengisi kemerdekaan dengan kegiatan yang positif dalam rangka pembengunan bangsa Indonesia yang seutuhnya. Misalnya dengan mencintai dan bangga menjadi bangsa Indonesia serta membangun kualitas manusia Indonesia dengan cara menuntuk ilmu setinggi-tingginya dan berkaya untuk membangun bangsa Indonesia. 
-\nKegiatan mengisi kemerdekaan bisa dengan cara pembangunan sarana dan prasarana di berbagai bidang
-
-
-              ''',
+\n  Kemerdekaan Negara Kesatuan Republik Indonesia didapatkan dengan cara yang tidak mudah dan tidak murah. Bertahun-tahun para pemimpin bangsa berupaya dengan berbagai macam cara untuk melepaskan diri dari penjajahan bangsa lain. Ribuan nyawa manusia juga telah melayang dalam upaya ini.
+  Generasi penerus bangsa harus mengisi kemerdekaan dengan kegiatan yang positif dalam rangka pembengunan bangsa Indonesia yang seutuhnya. Misalnya dengan mencintai dan bangga menjadi bangsa Indonesia serta membangun kualitas manusia Indonesia dengan cara menuntuk ilmu setinggi-tingginya dan berkaya untuk membangun bangsa Indonesia. 
+  Kegiatan mengisi kemerdekaan bisa dengan cara pembangunan sarana dan prasarana di berbagai bidang.''',
                         style: new TextStyle(
                           fontSize: 12.0,
                           color: appBlack,
                         ),
+                        textAlign: TextAlign.justify,
+                      ),
+                      Text(
+                        '''
+''',
+                        style: new TextStyle(
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.justify,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -106,22 +181,30 @@ Kegiatan Mengisi Kemerdekaan
                               maxScale: PhotoViewComputedScale.contained * 10,
                               minScale: PhotoViewComputedScale.contained,
                               imageProvider:
-                                  AssetImage("assets/img/pbiii_i.jpg"),
-                              initialScale: PhotoViewComputedScale.contained,
+                                  AssetImage("assets/img/pb1_ips_1.jpg"),
+                              initialScale: PhotoViewComputedScale.covered,
                             );
                           },
                           itemCount: 1,
                         ),
                       ),
                       Text(
-                        '''
-Pembangunan jalan. Sumber: bisnis.tempo.co
-             ''',
+                        '''Pembangunan jalan. Sumber: bisnis.tempo.co''',
                         style: new TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 10.0,
                           color: appBlack,
                         ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        '''
+''',
+                        style: new TextStyle(
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.justify,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -134,22 +217,30 @@ Pembangunan jalan. Sumber: bisnis.tempo.co
                               maxScale: PhotoViewComputedScale.contained * 10,
                               minScale: PhotoViewComputedScale.contained,
                               imageProvider:
-                                  AssetImage("assets/img/pbiii_ii.jpg"),
-                              initialScale: PhotoViewComputedScale.contained,
+                                  AssetImage("assets/img/pb1_ips_2.jpg"),
+                              initialScale: PhotoViewComputedScale.covered,
                             );
                           },
                           itemCount: 1,
                         ),
                       ),
                       Text(
-                        '''
-Pembangunan jembatan. Sumber: tender-indonesia.com
-             ''',
+                        '''Pembangunan jembatan. Sumber: tender-indonesia.com''',
                         style: new TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 10.0,
                           color: appBlack,
                         ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        '''
+''',
+                        style: new TextStyle(
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.justify,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -162,22 +253,30 @@ Pembangunan jembatan. Sumber: tender-indonesia.com
                               maxScale: PhotoViewComputedScale.contained * 10,
                               minScale: PhotoViewComputedScale.contained,
                               imageProvider:
-                                  AssetImage("assets/img/pbiii_iii.jpg"),
-                              initialScale: PhotoViewComputedScale.contained,
+                                  AssetImage("assets/img/pb1_ips_3.jpg"),
+                              initialScale: PhotoViewComputedScale.covered,
                             );
                           },
                           itemCount: 1,
                         ),
                       ),
                       Text(
-                        '''
-Pembangunan pasar. Sumber: radarmadura.jawapos.com
-             ''',
+                        '''Pembangunan pasar. Sumber: radarmadura.jawapos.com''',
                         style: new TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 10.0,
                           color: appBlack,
                         ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        '''
+''',
+                        style: new TextStyle(
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.justify,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -190,22 +289,30 @@ Pembangunan pasar. Sumber: radarmadura.jawapos.com
                               maxScale: PhotoViewComputedScale.contained * 10,
                               minScale: PhotoViewComputedScale.contained,
                               imageProvider:
-                                  AssetImage("assets/img/pbiii_iv.jpg"),
-                              initialScale: PhotoViewComputedScale.contained,
+                                  AssetImage("assets/img/pb1_ips_4.jpg"),
+                              initialScale: PhotoViewComputedScale.covered,
                             );
                           },
                           itemCount: 1,
                         ),
                       ),
                       Text(
-                        '''
-Pembangunan sekolah. Sumber: sekolah.data.kemendikbud.go.id
-             ''',
+                        '''Pembangunan sekolah. Sumber: sekolah.data.kemendikbud.go.id''',
                         style: new TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 10.0,
                           color: appBlack,
                         ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        '''
+''',
+                        style: new TextStyle(
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.justify,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -218,22 +325,21 @@ Pembangunan sekolah. Sumber: sekolah.data.kemendikbud.go.id
                               maxScale: PhotoViewComputedScale.contained * 10,
                               minScale: PhotoViewComputedScale.contained,
                               imageProvider:
-                                  AssetImage("assets/img/pbiii_v.jpg"),
-                              initialScale: PhotoViewComputedScale.contained,
+                                  AssetImage("assets/img/pb1_ips_5.jpg"),
+                              initialScale: PhotoViewComputedScale.covered,
                             );
                           },
                           itemCount: 1,
                         ),
                       ),
                       Text(
-                        '''
-Pembangunan tempat ibadah. Sumber: ajnn.net
-             ''',
+                        '''Pembangunan tempat ibadah. Sumber: ajnn.net''',
                         style: new TextStyle(
                           fontStyle: FontStyle.italic,
                           fontSize: 10.0,
                           color: appBlack,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),

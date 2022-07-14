@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:bouncing_widget/bouncing_widget.dart';
+import 'package:crossword_mp/app/modules/player.dart';
 import 'package:crossword_mp/app/pallete/color_pallete.dart';
 import 'package:crossword_mp/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,9 @@ import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key key}) : super(key: key);
+  HomeView({Key key}) : super(key: key);
+
+  final aPlay = Get.find<APlayer>();
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -46,192 +49,319 @@ class HomeView extends GetView<HomeController> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/img/Bg1.png"),
+                  image: AssetImage("assets/img/bg 1.png"),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            Container(
-              margin:
-                  EdgeInsets.only(left: 32, right: 32, top: 120, bottom: 125),
-              decoration: BoxDecoration(
-                  color: appWhite.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(80)),
-            ),
-            Container(
-              margin:
-                  EdgeInsets.only(left: 30, right: 30, top: 120, bottom: 120),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/img/bingkai.png'),
-                    fit: BoxFit.fill),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Flexible(
-                          child: BouncingWidget(
-                            scaleFactor: 3,
-                            onPressed: () {
-                              Future.delayed(
-                                Duration(milliseconds: 400),
-                                () {},
-                              );
-                            },
-                            child: Container(
-                              height: 70,
-                              width: 70,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage("assets/img/t_ptjk.png"),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 30,
-                        ),
-                        Flexible(
-                          child: BouncingWidget(
-                            scaleFactor: 3,
-                            onPressed: () {
-                              Future.delayed(
-                                Duration(milliseconds: 300),
-                                () {
-                                  Get.offAllNamed(Routes.KDKI);
-                                },
-                              );
-                            },
-                            child: Container(
-                              height: 70,
-                              width: 70,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage("assets/img/kd.png"),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  Flexible(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Flexible(
-                          child: BouncingWidget(
-                            scaleFactor: 3,
-                            onPressed: (() {
-                              Future.delayed(
-                                Duration(milliseconds: 300),
-                                () {
-                                  Get.offAllNamed(Routes.MATERI);
-                                },
-                              );
-                            }),
-                            child: Container(
-                              height: 70,
-                              width: 70,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage("assets/img/t_materi.png"),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 30,
-                        ),
-                        //game
-                        Flexible(
-                          child: BouncingWidget(
-                            scaleFactor: 3,
-                            onPressed: () {
-                              Future.delayed(
-                                Duration(milliseconds: 300),
-                                () {
-                                  Get.offAllNamed(Routes.GAME_HOME);
-                                },
-                              );
-                            },
-                            child: Container(
-                              height: 70,
-                              width: 70,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage("assets/img/t_game.png"),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                  //profil
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: 30),
-              alignment: Alignment.bottomCenter,
-              child: BouncingWidget(
-                scaleFactor: 3,
-                onPressed: () {
-                  Future.delayed(
-                    Duration(milliseconds: 300),
-                    () {
-                      Get.offAllNamed(Routes.PROFIL);
-                    },
-                  );
-                },
-                child: Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    border: Border.all(
-                      color: Color.fromRGBO(0, 0, 0, 1),
-                      width: 1,
-                    ),
-                    image: DecorationImage(
-                      image: AssetImage("assets/img/prof.png"),
-                      fit: BoxFit.fill,
+            Obx(
+              () => Align(
+                alignment: Alignment.topRight,
+                child: BouncingWidget(
+                  stayOnBottom: false,
+                  onPressed: () {
+                    Future.delayed(
+                      Duration(milliseconds: 300),
+                      () {
+                        aPlay.butstat.toggle();
+                        aPlay.bgmPlayorPause();
+                      },
+                    );
+                  },
+                  scaleFactor: 2,
+                  child: Container(
+                    height: Get.width * 0.13,
+                    width: Get.width * 0.13,
+                    margin: EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      //color: appRed,
+                      image: DecorationImage(
+                        image: AssetImage('${aPlay.setImg()}'),
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.only(top: 110),
-              alignment: Alignment.topCenter,
-              child: Container(
-                height: 60,
-                width: 180,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/img/men.png"),
-                    fit: BoxFit.fill,
+            Align(
+              alignment: Alignment.topLeft,
+              child: BouncingWidget(
+                stayOnBottom: false,
+                onPressed: () {
+                  Future.delayed(
+                    Duration(milliseconds: 400),
+                    () {
+                      aPlay.clickPlay();
+                      Get.toNamed(Routes.PROFIL);
+                    },
+                  );
+                },
+                scaleFactor: 2,
+                child: Container(
+                  height: Get.width * 0.13,
+                  width: Get.width * 0.13,
+                  margin: EdgeInsets.all(30),
+                  decoration: BoxDecoration(
+                    //color: appRed,
+                    image: DecorationImage(
+                      image: AssetImage('assets/img/TOMBOL PROFIL 1.png'),
+                      fit: BoxFit.contain,
+                    ),
                   ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                margin: EdgeInsets.only(left: 40, right: 40),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            height: Get.height * 0.15,
+                            margin: EdgeInsets.only(bottom: 30),
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('assets/img/menu 1.png'),
+                                  fit: BoxFit.contain),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Flexible(
+                                child: BouncingWidget(
+                                  scaleFactor: 3,
+                                  onPressed: () {
+                                    Future.delayed(
+                                      Duration(milliseconds: 400),
+                                      () {
+                                        aPlay.clickPlay();
+                                        Get.toNamed(Routes.HELP);
+                                      },
+                                    );
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Container(
+                                        height: Get.width * 0.17,
+                                        width: Get.width * 0.17,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                                "assets/img/TOMBOL PETUNJUK 1.png"),
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(top: 10),
+                                        width: Get.width * 0.25,
+                                        height: Get.width * 0.08,
+                                        alignment: Alignment.center,
+                                        decoration: BoxDecoration(
+                                            color: apppurp,
+                                            border: Border.all(
+                                                color: appWhite, width: 2),
+                                            borderRadius:
+                                                BorderRadius.circular(90)),
+                                        child: Text(
+                                          "PETUNJUK",
+                                          style: TextStyle(
+                                              color: appWhite,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 30,
+                              ),
+                              Flexible(
+                                child: BouncingWidget(
+                                  scaleFactor: 3,
+                                  onPressed: () {
+                                    Future.delayed(
+                                      Duration(milliseconds: 300),
+                                      () {
+                                        aPlay.clickPlay();
+                                        Get.toNamed(Routes.MATERI);
+                                      },
+                                    );
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Container(
+                                        height: Get.width * 0.17,
+                                        width: Get.width * 0.17,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                                "assets/img/TOMBOL MATERI 1.png"),
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(top: 10),
+                                        width: Get.width * 0.25,
+                                        height: Get.width * 0.08,
+                                        alignment: Alignment.center,
+                                        decoration: BoxDecoration(
+                                            color: apppurp,
+                                            border: Border.all(
+                                                color: appWhite, width: 2),
+                                            borderRadius:
+                                                BorderRadius.circular(90)),
+                                        child: Text(
+                                          "MATERI",
+                                          style: TextStyle(
+                                              color: appWhite,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Flexible(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Flexible(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Flexible(
+                                  child: BouncingWidget(
+                                    scaleFactor: 3,
+                                    onPressed: (() {
+                                      Future.delayed(
+                                        Duration(milliseconds: 300),
+                                        () {
+                                          aPlay.clickPlay();
+                                          Get.toNamed(Routes.KDKI);
+                                        },
+                                      );
+                                    }),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Container(
+                                          height: Get.width * 0.17,
+                                          width: Get.width * 0.17,
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                  "assets/img/TOMBOL KDKI 1.png"),
+                                              fit: BoxFit.fill,
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          width: Get.width * 0.25,
+                                          height: Get.width * 0.08,
+                                          alignment: Alignment.center,
+                                          decoration: BoxDecoration(
+                                              color: apppurp,
+                                              border: Border.all(
+                                                  color: appWhite, width: 2),
+                                              borderRadius:
+                                                  BorderRadius.circular(90)),
+                                          child: Text(
+                                            "KD & KI",
+                                            style: TextStyle(
+                                                color: appWhite,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 30,
+                                ),
+                                Flexible(
+                                  child: BouncingWidget(
+                                    scaleFactor: 3,
+                                    onPressed: () {
+                                      Future.delayed(
+                                        Duration(milliseconds: 300),
+                                        () {
+                                          aPlay.clickPlay();
+                                          Get.toNamed(Routes.GAME_HOME);
+                                        },
+                                      );
+                                    },
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Container(
+                                          height: Get.width * 0.17,
+                                          width: Get.width * 0.17,
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                  "assets/img/TOMBOL GAME 1.png"),
+                                              fit: BoxFit.fill,
+                                            ),
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          width: Get.width * 0.25,
+                                          height: Get.width * 0.08,
+                                          alignment: Alignment.center,
+                                          decoration: BoxDecoration(
+                                              color: apppurp,
+                                              border: Border.all(
+                                                  color: appWhite, width: 2),
+                                              borderRadius:
+                                                  BorderRadius.circular(90)),
+                                          child: Text(
+                                            "GAME",
+                                            style: TextStyle(
+                                                color: appWhite,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

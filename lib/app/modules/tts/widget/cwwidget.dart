@@ -1,13 +1,17 @@
 // ignore_for_file: invalid_use_of_protected_member, deprecated_member_use, invalid_use_of_visible_for_testing_member
 
 import 'package:crossword_mp/app/pallete/color_pallete.dart';
+import 'package:crossword_mp/main.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:word_search/word_search.dart';
-import 'package:assets_audio_player/assets_audio_player.dart';
+
+import '../../player.dart';
 
 class CrosswordWidget extends StatefulWidget {
   CrosswordWidget({Key key}) : super(key: key);
+  final aPlay = Get.find<APlayer>();
 
   @override
   _CrosswordWidgetState createState() => _CrosswordWidgetState();
@@ -18,8 +22,6 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
   int numBoxPerRow = 12;
   double padding = 2;
   Size sizeBox = Size.zero;
-  AssetsAudioPlayer audioPlayer =
-      AssetsAudioPlayer(); // this will create a instance object of a class
 
   ValueNotifier<List<List<String>>> listChars;
   ValueNotifier<List<CrosswordAnswer>> answerList;
@@ -33,10 +35,6 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
     answerList = new ValueNotifier<List<CrosswordAnswer>>([]);
     currentDragObj = new ValueNotifier<CurrentDragObj>(new CurrentDragObj());
     charsDone = new ValueNotifier<List<int>>(new List<int>());
-    audioPlayer.open(
-      Audio('assets/sound/cgtss.mp3'),
-      autoStart: false,
-    );
 
     generateRandomWord();
   }
@@ -99,8 +97,8 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
       answerList.notifyListeners();
       print("selesai ${selesai.length}");
       if (!selesai.contains(indexFound)) {
-        audioPlayer.play();
         selesai.add(indexFound);
+        aPlay.congrats();
         AlertDialog alert = AlertDialog(
           title: Text("Horee :) !!!"),
           content: Container(
@@ -125,7 +123,6 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
         );
 
         showDialog(context: context, builder: (context) => alert);
-        audioPlayer.dispose();
       }
     }
   }
@@ -324,42 +321,54 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                             Text(
                               '1.Surat yang berisi permintaan seseorang untuk menghadiri suatu acara.',
                               style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                color: value[0].done ? appLightBlue : appBlack,
-                              ),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  color:
+                                      value[0].done ? appLightBlue : appBlack,
+                                  decoration: value[0].done
+                                      ? TextDecoration.lineThrough
+                                      : TextDecoration.none),
                             ),
                             Text(
-                                '2. Surat undangan untuk kepentingan kedinasan.',
-                                style: TextStyle(
+                              '2. Surat undangan untuk kepentingan kedinasan.',
+                              style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
                                   color:
                                       value[1].done ? appLightBlue : appBlack,
-                                )),
+                                  decoration: value[1].done
+                                      ? TextDecoration.lineThrough
+                                      : TextDecoration.none),
+                            ),
                             Text('3. Perubahan wujud benda padat menjadi gas.',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color:
-                                      value[2].done ? appLightBlue : appBlack,
-                                )),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        value[2].done ? appLightBlue : appBlack,
+                                    decoration: value[2].done
+                                        ? TextDecoration.lineThrough
+                                        : TextDecoration.none)),
                             Text(
                                 '4. Benda yang terlalu lama dilemari akan mengecil dan menghilang.',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color:
-                                      value[3].done ? appLightBlue : appBlack,
-                                )),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        value[3].done ? appLightBlue : appBlack,
+                                    decoration: value[3].done
+                                        ? TextDecoration.lineThrough
+                                        : TextDecoration.none)),
                             Text(
                                 '5. Termasuk salah satu kegiatan mengisi kemerdekaan.',
                                 style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color:
-                                      value[4].done ? appLightBlue : appBlack,
-                                )),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        value[4].done ? appLightBlue : appBlack,
+                                    decoration: value[4].done
+                                        ? TextDecoration.lineThrough
+                                        : TextDecoration.none)),
                           ],
                         ),
                       ),

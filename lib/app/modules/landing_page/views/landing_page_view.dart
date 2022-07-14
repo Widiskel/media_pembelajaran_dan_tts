@@ -2,7 +2,10 @@
 
 import 'dart:io';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:bouncing_widget/bouncing_widget.dart';
+import 'package:crossword_mp/app/modules/home/views/home_view.dart';
+import 'package:crossword_mp/app/modules/player.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -12,7 +15,10 @@ import 'package:flutter/services.dart';
 import '../controllers/landing_page_controller.dart';
 
 class LandingPageView extends GetView<LandingPageController> {
-  const LandingPageView({Key key}) : super(key: key);
+  LandingPageView({Key key}) : super(key: key);
+
+  final aPlay = Get.find<APlayer>();
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -39,41 +45,94 @@ class LandingPageView extends GetView<LandingPageController> {
             false;
       },
       child: Scaffold(
-        body: Container(
-          height: Get.height,
-          width: Get.width,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/img/Bg1.png"),
-              fit: BoxFit.cover,
+        body: Stack(
+          children: [
+            Container(
+              height: Get.height,
+              width: Get.width,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/img/bg 1.png"),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              BouncingWidget(
-                stayOnBottom: false,
-                onPressed: () {
-                  Future.delayed(
-                    Duration(milliseconds: 400),
-                    () {
-                      Get.offAllNamed(Routes.HOME);
-                    },
-                  );
-                },
-                scaleFactor: 2,
-                child: Container(
-                  width: 149,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/img/start.png"),
+            Obx(
+              () => Align(
+                alignment: Alignment.topRight,
+                child: BouncingWidget(
+                  stayOnBottom: false,
+                  onPressed: () {
+                    Future.delayed(
+                      Duration(milliseconds: 300),
+                      () {
+                        aPlay.butstat.toggle();
+                        aPlay.bgmPlayorPause();
+                      },
+                    );
+                  },
+                  scaleFactor: 2,
+                  child: Container(
+                    height: Get.width * 0.13,
+                    width: Get.width * 0.13,
+                    margin: EdgeInsets.all(30),
+                    decoration: BoxDecoration(
+                      //color: appRed,
+                      image: DecorationImage(
+                        image: AssetImage('${aPlay.setImg()}'),
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(bottom: 50, left: 20, right: 20),
+                    height: Get.height * 0.16,
+                    width: Get.width,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(
+                              'assets/img/JUDUL.png',
+                            ),
+                            fit: BoxFit.contain)),
+                  ),
+                  Flexible(
+                    child: BouncingWidget(
+                      stayOnBottom: false,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 400),
+                          () {
+                            aPlay.clickPlay();
+                            Get.offAllNamed(Routes.HOME);
+                          },
+                        );
+                      },
+                      scaleFactor: 2,
+                      child: Container(
+                        width: Get.width * 0.5,
+                        height: Get.height * 0.15,
+                        decoration: BoxDecoration(
+                          //color: appRed,
+                          image: DecorationImage(
+                            image: AssetImage("assets/img/MULAI 1.png"),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

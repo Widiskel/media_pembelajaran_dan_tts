@@ -19,12 +19,14 @@ abstract class Routes {
   static const PB1_IPA = _Paths.PB1_IPA;
   static const PB1_IPS = _Paths.PB1_IPS;
   static const PB2 = _Paths.PB2;
-  static const PB2_IPS = _Paths.PB2_IPS;
+  static const PB2_BI = _Paths.PB2_BI;
   static const PB2_IPA = _Paths.PB2_IPA;
   static const PB2_SBDP = _Paths.PB2_SBDP;
   static const PB3 = _Paths.PB3;
   static const PB3_PPKN = _Paths.PB3_PPKN;
   static const PB3_PPKN2 = _Paths.PB3_PPKN2;
+  static const PB3_PPKN3 = _Paths.PB3_PPKN3;
+  static const HELP = _Paths.HELP;
 }
 
 abstract class _Paths {
@@ -43,10 +45,12 @@ abstract class _Paths {
   static const PB1_IPA = '/pb1-ipa';
   static const PB1_IPS = '/pb1-ips';
   static const PB2 = '/pb2';
-  static const PB2_IPS = '/pb2-ips';
+  static const PB2_BI = '/pb2-bi';
   static const PB2_IPA = '/pb2-ipa';
   static const PB2_SBDP = '/pb2-sbdp';
   static const PB3 = '/pb3';
   static const PB3_PPKN = '/pb3-ppkn';
   static const PB3_PPKN2 = '/pb3-ppkn2';
+  static const PB3_PPKN3 = '/pb3-ppkn3';
+  static const HELP = '/help';
 }
