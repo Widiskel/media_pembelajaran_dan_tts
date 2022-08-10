@@ -1,7 +1,6 @@
 // ignore_for_file: invalid_use_of_protected_member, deprecated_member_use, invalid_use_of_visible_for_testing_member
 
 import 'package:crossword_mp/app/pallete/color_pallete.dart';
-import 'package:crossword_mp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -11,13 +10,13 @@ import '../../player.dart';
 
 class CrosswordWidget extends StatefulWidget {
   CrosswordWidget({Key key}) : super(key: key);
-  final aPlay = Get.find<APlayer>();
 
   @override
   _CrosswordWidgetState createState() => _CrosswordWidgetState();
 }
 
 class _CrosswordWidgetState extends State<CrosswordWidget> {
+  final aPlay = Get.find<APlayer>();
   List<int> selesai = [];
   int numBoxPerRow = 12;
   double padding = 2;

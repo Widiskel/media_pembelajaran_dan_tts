@@ -43,6 +43,15 @@ class APlayer extends GetxController {
     }
   }
 
+  void stop() async {
+    await playerbgm.stop();
+    await playerCgts.stop();
+    await playerclick.stop();
+    playerbgm.dispose();
+    playerCgts.dispose();
+    playerclick.dispose();
+  }
+
   void clickPlay() async {
     await playerclick.stop();
     await playerclick.play(click);

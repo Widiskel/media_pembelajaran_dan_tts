@@ -21,6 +21,7 @@ class LandingPageView extends GetView<LandingPageController> {
 
   @override
   Widget build(BuildContext context) {
+    aPlay.bgmPlayorPause();
     return WillPopScope(
       onWillPop: () {
         return showDialog(
@@ -35,7 +36,10 @@ class LandingPageView extends GetView<LandingPageController> {
                   ),
                   SizedBox(height: 30),
                   new GestureDetector(
-                    onTap: () => exit(0),
+                    onTap: () {
+                      aPlay.stop();
+                      Navigator.of(context).pop(true);
+                    },
                     child: Text("YES"),
                   ),
                   SizedBox(height: 30),
@@ -60,30 +64,84 @@ class LandingPageView extends GetView<LandingPageController> {
             Obx(
               () => Align(
                 alignment: Alignment.topRight,
-                child: BouncingWidget(
-                  stayOnBottom: false,
-                  onPressed: () {
-                    Future.delayed(
-                      Duration(milliseconds: 300),
-                      () {
-                        aPlay.butstat.toggle();
-                        aPlay.bgmPlayorPause();
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    BouncingWidget(
+                      stayOnBottom: false,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 300),
+                          () {
+                            aPlay.clickPlay();
+                            return showDialog(
+                                  context: context,
+                                  builder: (context) => new AlertDialog(
+                                    title: new Text('Are you sure?'),
+                                    content: new Text('Do you want to exit'),
+                                    actions: <Widget>[
+                                      new GestureDetector(
+                                        onTap: () =>
+                                            Navigator.of(context).pop(false),
+                                        child: Text("NO"),
+                                      ),
+                                      SizedBox(height: 30),
+                                      new GestureDetector(
+                                        onTap: () {
+                                          aPlay.stop();
+                                          Navigator.of(context).pop(true);
+                                        },
+                                        child: Text("YES"),
+                                      ),
+                                      SizedBox(height: 30),
+                                    ],
+                                  ),
+                                ) ??
+                                false;
+                          },
+                        );
                       },
-                    );
-                  },
-                  scaleFactor: 2,
-                  child: Container(
-                    height: Get.width * 0.13,
-                    width: Get.width * 0.13,
-                    margin: EdgeInsets.all(30),
-                    decoration: BoxDecoration(
-                      //color: appRed,
-                      image: DecorationImage(
-                        image: AssetImage('${aPlay.setImg()}'),
-                        fit: BoxFit.contain,
+                      scaleFactor: 2,
+                      child: Container(
+                        height: Get.width * 0.13,
+                        width: Get.width * 0.13,
+                        margin: EdgeInsets.only(top: 30, bottom: 30),
+                        decoration: BoxDecoration(
+                          //color: appRed,
+                          image: DecorationImage(
+                            image: AssetImage('assets/img/OUT.png'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                    BouncingWidget(
+                      stayOnBottom: false,
+                      onPressed: () {
+                        Future.delayed(
+                          Duration(milliseconds: 300),
+                          () {
+                            aPlay.butstat.toggle();
+                            aPlay.bgmPlayorPause();
+                          },
+                        );
+                      },
+                      scaleFactor: 2,
+                      child: Container(
+                        height: Get.width * 0.13,
+                        width: Get.width * 0.13,
+                        margin: EdgeInsets.only(
+                            top: 30, right: 30, bottom: 30, left: 10),
+                        decoration: BoxDecoration(
+                          //color: appRed,
+                          image: DecorationImage(
+                            image: AssetImage('${aPlay.setImg()}'),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

@@ -25,10 +25,6 @@ dependencies:
   
 
 
-
-
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -45,6 +41,5 @@ flutter:
 
 flutter_native_splash:
   background_image: "assets/img/bgg.png"
-  image: "assets/img/JUDUL.png"
 
 
