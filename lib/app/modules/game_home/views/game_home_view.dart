@@ -2,7 +2,6 @@
 
 import 'package:bouncing_widget/bouncing_widget.dart';
 import 'package:crossword_mp/app/modules/player.dart';
-import 'package:crossword_mp/app/pallete/color_pallete.dart';
 import 'package:crossword_mp/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,7 @@ class GameHomeView extends GetView<GameHomeController> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        Get.back();
+        Get.toNamed(Routes.HOME);
       },
       child: Scaffold(
         body: Stack(
@@ -72,7 +71,7 @@ class GameHomeView extends GetView<GameHomeController> {
                     Duration(milliseconds: 400),
                     () {
                       aPlay.clickPlay();
-                      Get.back();
+                      Get.toNamed(Routes.HOME);
                     },
                   );
                 },
@@ -91,123 +90,120 @@ class GameHomeView extends GetView<GameHomeController> {
                 ),
               ),
             ),
-            Center(
+            Align(
+              alignment: Alignment.center,
               child: Container(
-                margin: EdgeInsets.only(
-                    left: Get.width * 0.15,
-                    right: Get.width * 0.15,
-                    top: Get.height * 0.2),
-                decoration: BoxDecoration(
-                  border:
-                      Border.all(color: appGrey.withOpacity(0.8), width: 20),
-                  color: appWhite.withOpacity(0.6),
-                  borderRadius: BorderRadius.circular(20),
-                ),
+                height: Get.height * 0.7,
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.only(left: 40, right: 40),
+                alignment: Alignment.center,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Flexible(
-                      child: BouncingWidget(
-                        scaleFactor: 2,
-                        onPressed: () {
-                          Future.delayed(
-                            Duration(milliseconds: 300),
-                            () {
-                              aPlay.clickPlay();
-                              Get.toNamed(Routes.TTS);
-                            },
-                          );
-                        },
-                        child: Container(
-                          height: 55,
-                          margin: EdgeInsets.symmetric(
-                            vertical: 20,
-                          ),
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    "assets/img/GAME PEMBELAJARAN 1 1.png"),
-                                fit: BoxFit.fitHeight),
-                          ),
-                        ),
+                    Container(
+                      height: Get.height * 0.15,
+                      margin: EdgeInsets.only(bottom: 30),
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/img/gaame 1.png'),
+                            fit: BoxFit.contain),
                       ),
                     ),
                     Flexible(
-                      child: BouncingWidget(
-                        scaleFactor: 2,
-                        onPressed: () {
-                          Future.delayed(
-                            Duration(milliseconds: 300),
-                            () {
-                              aPlay.clickPlay();
-                              Get.toNamed(Routes.TTS2);
-                            },
-                          );
-                        },
-                        child: Container(
-                          height: 55,
-                          margin: EdgeInsets.symmetric(
-                            vertical: 20,
-                          ),
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(
-                                  "assets/img/GAME PEMBELAJARAN 2 1.png"),
-                              fit: BoxFit.fitHeight,
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: BouncingWidget(
+                              scaleFactor: 2,
+                              onPressed: () {
+                                Future.delayed(
+                                  Duration(milliseconds: 300),
+                                  () {
+                                    aPlay.clickPlay();
+                                    Get.toNamed(Routes.TTS);
+                                  },
+                                );
+                              },
+                              child: Container(
+                                height: 60,
+                                width: Get.width,
+                                margin: EdgeInsets.symmetric(vertical: 20),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/img/GAME PEMBELAJARAN 1 1.png"),
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
                     ),
                     Flexible(
-                      child: BouncingWidget(
-                        scaleFactor: 2,
-                        onPressed: () {
-                          Future.delayed(
-                            Duration(milliseconds: 300),
-                            () {
-                              aPlay.clickPlay();
-                              Get.toNamed(Routes.TTS3);
-                            },
-                          );
-                        },
-                        child: Container(
-                          height: 55,
-                          margin: EdgeInsets.symmetric(
-                            vertical: 20,
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: BouncingWidget(
+                              scaleFactor: 2,
+                              onPressed: () {
+                                Future.delayed(
+                                  Duration(milliseconds: 300),
+                                  () {
+                                    aPlay.clickPlay();
+                                    Get.toNamed(Routes.TTS2);
+                                  },
+                                );
+                              },
+                              child: Container(
+                                height: 60,
+                                margin: EdgeInsets.symmetric(vertical: 20),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/img/GAME PEMBELAJARAN 2 1.png"),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    "assets/img/GAME PEMBELAJARAN 3 1.png"),
-                                fit: BoxFit.fitHeight),
+                        ],
+                      ),
+                    ),
+                    Flexible(
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: BouncingWidget(
+                              scaleFactor: 2,
+                              onPressed: () {
+                                Future.delayed(
+                                  Duration(milliseconds: 300),
+                                  () {
+                                    aPlay.clickPlay();
+                                    Get.toNamed(Routes.TTS3);
+                                  },
+                                );
+                              },
+                              child: Container(
+                                height: 60,
+                                margin: EdgeInsets.symmetric(vertical: 20),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/img/GAME PEMBELAJARAN 3 1.png"),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Container(
-                      height: 80,
-                      width: Get.width * 0.3,
-                      margin: EdgeInsets.only(top: 100),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage("assets/img/gaame 1.png"),
-                            fit: BoxFit.contain),
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ),
           ],

@@ -44,6 +44,7 @@ flutter:
   uses-material-design: true
 
 flutter_native_splash:
-  background_image: "assets/img/bg.png"
+  background_image: "assets/img/bgg.png"
+  image: "assets/img/JUDUL.png"
 
 
