@@ -9,6 +9,11 @@ import 'package:get/get.dart';
 import 'package:crossword_mp/app/routes/app_pages.dart';
 
 void main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp],
+  );
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(MyApp());
 }
 
@@ -20,39 +25,23 @@ final aPlay = Get.put(
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    FlutterNativeSplash.remove();
     return FutureBuilder(
-      future: Future.delayed(Duration(seconds: 3)),
-      builder: (context, snapshot) {
-        print(snapshot);
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          WidgetsBinding widgetsBinding =
-              WidgetsFlutterBinding.ensureInitialized();
-          SystemChrome.setPreferredOrientations(
-            [DeviceOrientation.portraitUp],
-          );
-          FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-          return SplashScreen();
-        } else {
-          SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
-          SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-          FlutterNativeSplash.remove();
-          return FutureBuilder(
-              future: Future.delayed(Duration(seconds: 3)),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return SplashScreen();
-                } else {
-                  aPlay.bgmPlayorPause();
-                  return GetMaterialApp(
-                    debugShowCheckedModeBanner: false,
-                    title: "Media Pembelajaran dan TTS",
-                    initialRoute: Routes.LANDING_PAGE,
-                    getPages: AppPages.routes,
-                  );
-                }
-              });
-        }
-      },
-    );
+        future: Future.delayed(Duration(seconds: 3)),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return SplashScreen();
+          } else {
+            aPlay.bgmPlayorPause();
+            return GetMaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: "Media Pembelajaran dan TTS",
+              initialRoute: Routes.LANDING_PAGE,
+              getPages: AppPages.routes,
+            );
+          }
+        });
   }
 }
