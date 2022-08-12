@@ -21,8 +21,9 @@ dependencies:
   get: ^4.6.5
   get_cli: ^1.8.1
   photo_view: ^0.14.0
-<<<<<<< HEAD
-  assets_audio_player: ^3.0.4+4
-=======
-  assets_audio_player: ^3.0.4+4
->>>>>>> 21c3229d8aad05e9313e5650b1cfbc05b7d3218d
+  flutter_native_splash: ^2.2.4
+  audioplayers: ^1.0.1
+  font_awesome_flutter: ^10.1.0
+  sticky_headers: ^0.3.0+2
+  video_player: ^2.4.5
+  chewie: ^1.3.4
