@@ -89,6 +89,10 @@ class LandingPageView extends GetView<LandingPageController> {
                                       new GestureDetector(
                                         onTap: () {
                                           aPlay.stop();
+                                          Navigator.popUntil(
+                                              context,
+                                              ModalRoute.withName(
+                                                  '/landing-page'));
                                           Navigator.of(context).pop(true);
                                         },
                                         child: Text("YES"),
