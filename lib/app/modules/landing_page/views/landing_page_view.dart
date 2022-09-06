@@ -38,7 +38,7 @@ class LandingPageView extends GetView<LandingPageController> {
                   new GestureDetector(
                     onTap: () {
                       aPlay.stop();
-                      Navigator.of(context).pop(true);
+                      exit(0);
                     },
                     child: Text("YES"),
                   ),
@@ -89,11 +89,7 @@ class LandingPageView extends GetView<LandingPageController> {
                                       new GestureDetector(
                                         onTap: () {
                                           aPlay.stop();
-                                          Navigator.popUntil(
-                                              context,
-                                              ModalRoute.withName(
-                                                  '/landing-page'));
-                                          Navigator.of(context).pop(true);
+                                          exit(0);
                                         },
                                         child: Text("YES"),
                                       ),

@@ -173,7 +173,7 @@ class HelpView extends GetView<HelpController> {
                                             ),
                                             Expanded(
                                               child: Text(
-                                                "Tombol BACK : Digunakan untuk kembali ke halaman sebelumnya",
+                                                "Tombol KEMBALI : Digunakan untuk kembali ke halaman sebelumnya",
                                                 style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.bold,
@@ -201,7 +201,7 @@ class HelpView extends GetView<HelpController> {
                                             ),
                                             Expanded(
                                               child: Text(
-                                                "Tombol HOME : Digunakan untuk kembali ke halaman/menu utama",
+                                                "Tombol RUMAH : Digunakan untuk kembali ke halaman/menu utama",
                                                 style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.bold,
@@ -262,7 +262,7 @@ class HelpView extends GetView<HelpController> {
                                             ),
                                             Expanded(
                                               child: Text(
-                                                "Tombol PLAY : Digunakan untuk memainkan background audio",
+                                                "Tombol MAINKAN : Digunakan untuk memainkan suara latar belakang",
                                                 style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.bold,
@@ -290,7 +290,7 @@ class HelpView extends GetView<HelpController> {
                                             ),
                                             Expanded(
                                               child: Text(
-                                                "Tombol STOP : Digunakan menghentikan background audio",
+                                                "Tombol BERHENTI : Digunakan menghentikan suara latar belakang",
                                                 style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.bold,
@@ -435,7 +435,7 @@ class HelpView extends GetView<HelpController> {
                                             ),
                                             Expanded(
                                               child: Text(
-                                                "Tombol GAME : Digunakan untuk menuju ke halaman GAME",
+                                                "Tombol PERMAINAN : Digunakan untuk menuju ke halaman PERMAINAN",
                                                 style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.bold,
@@ -580,7 +580,7 @@ class HelpView extends GetView<HelpController> {
                                             ),
                                             Expanded(
                                               child: Text(
-                                                "Halaman GAME : Halaman yang berisi game pembelajaran yang berhubungan dengan materi",
+                                                "Halaman PERMAINAN : Halaman yang berisi game pembelajaran yang berhubungan dengan materi",
                                                 style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.bold,
@@ -877,7 +877,7 @@ class HelpView extends GetView<HelpController> {
                                               BorderRadius.circular(90)),
                                       alignment: Alignment.center,
                                       child: Text(
-                                        "GAME",
+                                        "PERMAINAN",
                                         style: const TextStyle(
                                             color: appBlack,
                                             fontSize: 16,
@@ -890,7 +890,7 @@ class HelpView extends GetView<HelpController> {
                                           alignment: Alignment.centerLeft,
                                           margin: EdgeInsets.all(15),
                                           child: Text(
-                                              """Petunjuk Bermain Game:
+                                              """Petunjuk memainkan permainan:
 1.  Gulung ke atas atau ke bawah pada kotak pertanyaan untuk melihat semua daftar pertanyaan.
 2.  Jika sudah menemukan jawaban dari pertanyaan, cari jawaban pada kotak puzzle.
 3.  Untuk menjawab, tekan dan tahan kotak puzzle dari huruf pertama hingga huruf terahir atau sebaliknya dari kata-kata jawaban.
@@ -903,8 +903,7 @@ class HelpView extends GetView<HelpController> {
                                         Container(
                                           alignment: Alignment.centerLeft,
                                           margin: EdgeInsets.all(15),
-                                          child: Text(
-                                              """Game Tips:
+                                          child: Text("""Game Tips:
 1.  Jawaban bisa ditemukan pada kotak yang tersusun secara vertikal atau horizontal. (TIDAK DIAGONAL).""",
                                               style: const TextStyle(
                                                   color: appBlack,

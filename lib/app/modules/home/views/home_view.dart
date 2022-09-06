@@ -85,9 +85,7 @@ class HomeView extends GetView<HomeController> {
                                       new GestureDetector(
                                         onTap: () {
                                           aPlay.stop();
-                                          Navigator.popUntil(context,
-                                              ModalRoute.withName('/home'));
-                                          Navigator.of(context).pop(true);
+                                          exit(0);
                                         },
                                         child: Text("YES"),
                                       ),
