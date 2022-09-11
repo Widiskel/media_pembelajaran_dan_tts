@@ -126,7 +126,7 @@ class Pb1IpaView extends GetView<Pb1IpaController> {
             ),
             Container(
               width: double.maxFinite,
-              padding: EdgeInsets.all(30),
+              padding: EdgeInsets.all(15),
               height: double.maxFinite,
               margin: EdgeInsets.only(left: 32, right: 32, top: 95, bottom: 35),
               decoration: BoxDecoration(
@@ -138,33 +138,37 @@ class Pb1IpaView extends GetView<Pb1IpaController> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical, //.horizontal
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '''Perubahan wujud benda \n(Menyblim)''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Perubahan wujud benda \n(Menyblim)''',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''\n
-    Perubahan wujud benda terjadi di sekitar kita tanpa kita sadari. Perubahan wujud benda merupakan suatu perubahan alami karena fenomena alam yang terjadi di sekeliling kita. Salah satu perubahan wujud benda yaitu menyublim.
-  Menyublim adalah perubahan wujud benda dari benda padat menjadi gas.''',
+    Perubahan wujud benda terjadi di sekitar kita tanpa kita sadari. Perubahan wujud benda merupakan suatu perubahan alami karena fenomena alam yang terjadi di sekeliling kita. Salah satu perubahan wujud benda yaitu menyublim. Menyublim adalah perubahan wujud benda dari benda padat menjadi gas.''',
                         style: new TextStyle(
                           fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
                           color: appBlack,
                         ),
                         textAlign: TextAlign.justify,
                       ),
                       Text(
-                        '''''',
+                        '''
+\nContoh Penyubliman:''',
                         style: new TextStyle(
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
-                        textAlign: TextAlign.justify,
+                            fontSize: 12.0,
+                            color: appBlack,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.left,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -185,10 +189,11 @@ class Pb1IpaView extends GetView<Pb1IpaController> {
                         ),
                       ),
                       Text(
-                        '''
-    Es kering ini berbeda dengan es batu biasa yang terbuat dari air. Es kering berasal dari karbondioksida yang berbentuk padat. Jika dibiarkan terus-menerus maka akan habis.''',
+                        '''\n
+    Es kering yang berasal dari karbondioksida yang berbentuk padat dan jika dibiarkan terus-menerus maka akan habis.''',
                         style: new TextStyle(
                           fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
                           color: appBlack,
                         ),
                         textAlign: TextAlign.justify,
@@ -220,10 +225,11 @@ class Pb1IpaView extends GetView<Pb1IpaController> {
                         ),
                       ),
                       Text(
-                        ''' 
-  Kapur barus yang diletakkan di lemari dalam beberapa hari akan mengecil bahkan menghilang dari lemari.''',
+                        '''\n
+      Kapur barus yang diletakkan di lemari dalam beberapa hari akan mengecil bahkan menghilang dari lemari.''',
                         style: new TextStyle(
                           fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
                           color: appBlack,
                         ),
                         textAlign: TextAlign.justify,

@@ -159,14 +159,15 @@ class Pb3Ppkn3View extends GetView<Pb3Ppkn3Controller> {
 Adapun budaya khas bangsa antara lain:
               ''',
                         style: new TextStyle(
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
+                            fontSize: 12.0,
+                            color: appBlack,
+                            fontWeight: FontWeight.bold),
                         textAlign: TextAlign.justify,
                       ),
                       Text(
                         ''' 
-1.  Gotong royong, yaitu saling membantu satu sama lain secara sukarela tanpa melihat perbedaan suku, ras, agama maupun budaya.
+Adapun budaya khas bangsa antara lain:
+1. Gotong royong, yaitu saling membantu satu sama lain secara sukarela tanpa melihat perbedaan suku, ras, agama maupun budaya.
               ''',
                         style: new TextStyle(
                           fontSize: 12.0,
@@ -194,7 +195,7 @@ Adapun budaya khas bangsa antara lain:
                       ),
                       Text(
                         ''' 
-2.  Musyawarah, yaitu menghasilkan suatu keputusan yang bermanfaat bagi kepeningan bersama dengan menghargai dan menghormati perbedaan pendapat.
+2. Musyawarah, yaitu menghasilkan suatu keputusan yang bermanfaat bagi kepeningan bersama dengan menghargai dan menghormati perbedaan pendapat.
               ''',
                         style: new TextStyle(
                           fontSize: 12.0,
@@ -222,7 +223,7 @@ Adapun budaya khas bangsa antara lain:
                       ),
                       Text(
                         ''' 
-3.  Toleransi, yaitu kesadaran untuk hidup berdampingan secara rukun dan saling menghormati perbedaan yang ada.
+3. Toleransi, yaitu kesadaran untuk hidup berdampingan secara rukun dan saling menghormati perbedaan yang ada.
               ''',
                         style: new TextStyle(
                           fontSize: 12.0,

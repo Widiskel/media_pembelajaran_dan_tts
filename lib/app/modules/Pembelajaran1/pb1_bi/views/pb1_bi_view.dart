@@ -128,7 +128,7 @@ class Pb1BiView extends GetView<Pb1BiController> {
 
             Container(
               width: double.maxFinite,
-              padding: EdgeInsets.all(30),
+              padding: EdgeInsets.all(15),
               height: double.maxFinite,
               margin: EdgeInsets.only(left: 32, right: 32, top: 95, bottom: 35),
               decoration: BoxDecoration(
@@ -140,29 +140,41 @@ class Pb1BiView extends GetView<Pb1BiController> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical, //.horizontal
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Center(
+                        child: Text(
+                          '''Surat Undangan''',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                       Text(
-                        '''Surat Undangan''',
+                        '''\n   Surat undangan merupakan surat yang berisi pemberitahuan dan permintaan kesediaan seseorang untuk menghadiri suatu acara atau kegiatan. Kalimat yang digunakan dalam surat undangan haruslah singkat, jelas dan padat. Tujuannya agar orang yang membacanya dapat segera mengerti isi surat undangan tersebut.
+\nJenis surat undangan ada 3 jenis, yaitu:
+1. Undangan resmi, undangan yang mengatasnamakan sebuah organisasi, instansi dan kedinasan untuk kepentingan kedinasan. 
+2. Undangan setengah resmi, undangan yang mengatasnamakan perorangan yang ditujukan ke perorangan maupun instansi atau organisasi untuk kepentingan umum.
+3. Undangan tidak resmi, undangan yang mengatasnamakan perorangan yang ditujukan kepada perorangan untuk kepentingan perorangan, seperti undangan ulang tahun.
+
+''',
                         style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 12.0,
                           color: appBlack,
                         ),
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.justify,
                       ),
                       Text(
-                        '''\n   Surat undangan merupakan surat yang berisi pemberitahuan dan permintaan kesediaan seseorang untuk menghadiri suatu acara atau kegiatan. Kalimat yang digunakan dalam surat undangan haruslah singkat, jelas dan padat. Tujuannya agar orang yang membacanya dapat segera mengerti isi surat undangan tersebut.
-\nJenis surat undangan ada 3 jenis, yaitu:
-1.  Undangan resmi, undangan yang mengatasnamakan sebuah organisasi, instansi dan kedinasan untuk kepentingan kedinasan. 
-2.  Undangan setengah resmi, undangan yang mengatasnamakan perorangan yang ditujukan ke perorangan maupun instansi atau organisasi untuk kepentingan umum.
-3.  Undangan tidak resmi, undangan yang mengatasnamakan perorangan yang ditujukan kepada perorangan untuk kepentingan perorangan, seperti undangan ulang tahun.
-
-Bagian-bagian surat :''',
+                        '''Adapun bagian-bagian surat sebagai berikut:''',
                         style: new TextStyle(
                           fontSize: 12.0,
                           color: appBlack,
                         ),
-                        textAlign: TextAlign.justify,
+                        textAlign: TextAlign.left,
                       ),
                       Text(
                         '''''',
@@ -182,8 +194,8 @@ Bagian-bagian surat :''',
                             return PhotoViewGalleryPageOptions(
                               maxScale: PhotoViewComputedScale.contained * 10,
                               minScale: PhotoViewComputedScale.contained,
-                              imageProvider:
-                                  AssetImage("assets/img/contoh undangan 1.png"),
+                              imageProvider: AssetImage(
+                                  "assets/img/contoh undangan 1.png"),
                               initialScale: PhotoViewComputedScale.covered,
                             );
                           },
@@ -208,8 +220,8 @@ Bagian-bagian surat :''',
                             return PhotoViewGalleryPageOptions(
                               maxScale: PhotoViewComputedScale.contained * 10,
                               minScale: PhotoViewComputedScale.contained,
-                              imageProvider:
-                                  AssetImage("assets/img/contoh undangan 2.png"),
+                              imageProvider: AssetImage(
+                                  "assets/img/contoh undangan 2.png"),
                               initialScale: PhotoViewComputedScale.covered,
                             );
                           },
@@ -234,8 +246,8 @@ Bagian-bagian surat :''',
                             return PhotoViewGalleryPageOptions(
                               maxScale: PhotoViewComputedScale.contained * 10,
                               minScale: PhotoViewComputedScale.contained,
-                              imageProvider:
-                                  AssetImage("assets/img/contoh undangan 3.png"),
+                              imageProvider: AssetImage(
+                                  "assets/img/contoh undangan 3.png"),
                               initialScale: PhotoViewComputedScale.covered,
                             );
                           },

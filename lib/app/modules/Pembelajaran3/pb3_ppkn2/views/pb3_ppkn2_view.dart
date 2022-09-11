@@ -140,28 +140,65 @@ class Pb3Ppkn2View extends GetView<Pb3Ppkn2Controller> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical, //.horizontal
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '''Peran Pancasila dalam Menjaga Keberagaman Bangsa''',
+                        '''Perhatikan teks barikut ini.\n''',
                         style: new TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 12.0,
                           color: appBlack,
                         ),
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.left,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: appBlack, width: 2)),
+                        child: Column(
+                          children: [
+                            Text(
+                              '''Peran Pancasila dalam Menjaga Keberagaman Bangsa''',
+                              style: new TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12.0,
+                                color: appBlack,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              ''' 
+\n  Pancasila sebagai dasar negara merupakan kepribadian dan pandangan hidup bangsa Indonesia. Maka, nilai-nilai luhur yang terkandung di dalamnya harus dipahami dan diamalkan oleh setiap warga negara Indonesia. Kita memiliki dasar yang kuat sehingga akan bisa menentukan sikap perilaku dan menghadapi perubahan-perubahan yang terjadi. Dengan demkian, kita tidak akan kehilangan kepribadian sebagai bangsa. Pancasila merupakan ukuran dan pedoman nilai dan norma untuk menerima atau menolak pengaruh globalisasi dan perkembangan Iptek. Pancasila merupakan pandangan hidup yang telah menyatu di dalam kebudayaan bangsa Indonesia.''',
+                              style: new TextStyle(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.bold,
+                                color: appBlack,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                          ],
+                        ),
                       ),
                       Text(
-                        ''' 
-\n  Pancasila sebagai dasar negara merupakan kepribadian dan pandangan hidup bangsa Indonesia. Maka, nilai-nilai luhur yang terkandung di dalamnya harus dipahami dan diamalkan oleh setiap warga negara Indonesia. Kita memiliki dasar yang kuat sehingga akan bisa menentukan sikap perilaku dan menghadapi perubahan-perubahan yang terjadi. Dengan demkian, kita tidak akan kehilangan kepribadian sebagai bangsa. Pancasila merupakan ukuran dan pedoman nilai dan norma untuk menerima atau menolak pengaruh globalisasi dan perkembangan Iptek. Pancasila merupakan pandangan hidup yang telah menyatu di dalam kebudayaan bangsa Indonesia.
-  Ada beberapa cara dalam menemukan informasi penting, yaitu:
-1.  Membuat daftar pertanyaan berdasarkan isi teks dengan menggunakan kata tanya, seperti apa, siapa, kapan, di mana, mengapa, dan bagaimana.
-2.  Menggunakan peta pikiran yaitu menentukan ide pokok dari teks kemudian menuliskan kalimat penjelas dalam bentuk poin-poin.
-\nContoh membuat peta pikiran :
-              ''',
-                        style: new TextStyle(
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
+                        '''\n
+Ada beberapa cara dalam menemukan informasi penting, yaitu:
+1. Membuat daftar pertanyaan berdasarkan isi teks dengan menggunakan kata tanya, seperti apa, siapa, kapan, di mana, mengapa, dan bagaimana.
+2. Menggunakan peta pikiran yaitu menentukan ide pokok dari teks kemudian menuliskan kalimat penjelas dalam bentuk poin-poin.
+''',
+                        style: const TextStyle(
+                            fontSize: 12,
+                            color: appBlack,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.justify,
+                      ),
+                      Text(
+                        '''
+Contoh peta pikiran pada teks Peran Pancasila dalam Menjaga Keberagaman Bangsa:
+''',
+                        style: const TextStyle(
+                            fontSize: 12,
+                            color: appBlack,
+                            fontWeight: FontWeight.normal),
                         textAlign: TextAlign.justify,
                       ),
                       AspectRatio(

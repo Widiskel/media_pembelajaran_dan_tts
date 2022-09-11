@@ -130,7 +130,7 @@ class Pb2IpaView extends GetView<Pb2IpaController> {
 
             Container(
               width: double.maxFinite,
-              padding: EdgeInsets.all(30),
+              padding: EdgeInsets.all(15),
               height: double.maxFinite,
               margin: EdgeInsets.only(left: 32, right: 32, top: 95, bottom: 35),
               decoration: BoxDecoration(
@@ -142,22 +142,26 @@ class Pb2IpaView extends GetView<Pb2IpaController> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical, //.horizontal
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '''Perubahan Wujud Benda (Mengkristal)''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Perubahan Wujud Benda (Mengkristal)''',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         ''' 
-\n  Pada pertemun sebelumnya kita sudah mempelajari perubahan wujud benda berupa penyubliman. Kali ini kita akan mempelajari perubahan wujud benda pengkristalan Mengkristal adalah perubahan wujud benda gas menjadi padat dengan proses pelepasan kalor.
-Contoh pengkristalan :''',
+\n  Pada pembelajaran 1, kita sudah mempelajari perubahan wujud benda berupa penyubliman. Kali ini, kita akan mempelajari perubahan wujud benda pengkristalan. Mengkristal adalah perubahan wujud benda gas menjadi padat dengan proses pelepasan kalor.
+\nContoh pengkristalan :''',
                         style: new TextStyle(
                           fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
                           color: appBlack,
                         ),
                         textAlign: TextAlign.justify,
@@ -180,14 +184,16 @@ Contoh pengkristalan :''',
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Berubahnya uap menjadi salju.''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Berubahnya uap menjadi salju.''',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -216,16 +222,18 @@ Contoh pengkristalan :''',
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        ''' 
+                      Center(
+                        child: Text(
+                          ''' 
 Proses pembuatan es kering.
               ''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''\n\nVideo Percobaan\n''',

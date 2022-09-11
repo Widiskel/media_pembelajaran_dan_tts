@@ -140,50 +140,53 @@ class Pb3PpknView extends GetView<Pb3PpknController> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical, //.horizontal
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        '''Peristiwa Lahirnya Pancasila''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Peristiwa Lahirnya Pancasila''',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         ''' 
-  \nPancasila berasal dari bahasa Sanskerta, yaitu panca dan sila. Panca artinya lima, dan sila artinya dasar. Jadi, pancasila berarti lima dsar atau lima asar. Dalam kitab Sutasoma karangan Mpu Tantular, pancasila berarti berbatu sendi yang lima atau pelaksanaan kesusilaan yang lima. Lahirnya pancasila sebagai dasar negara terjadi pada saat sidang BPUPKI (Badan Penyelidik Usaha Persiapan Kemerdekaan Indonesia) yang pertama. Adapun usulan-usulan dasar negara disampaikan oleh tiga tokoh negara.
-  Pada tanggal 18 Agustus 1945, disahkan Undang-Undang Dasar 1945 pada sidang Panitia Persiapan Kemerdekaan Indonesia (PPKI) termasuk pembukaan UUD 1945. Pada pembukaan UUD 1945, termuat isi rumusan Prinsip Dasar Negara (Pancasila) pada alinea ke IV yang berbunyi:
-1.  Ketuhanan Yang Maha Esa
-2.  Kemanusiaan yang Adil dan Beradab
-3.  Persatuan Indonesia
-4.  Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan
-5.  Keadilan sosial bagi seluruh rakyat Indonesia
+\n    Pancasila berasal dari bahasa Sanskerta, yaitu panca dan sila. Panca artinya lima dan sila artinya dasar. Jadi, pancasila berarti lima dasar atau lima asas. Dalam kitab Sutasoma karangan Mpu Tantular, pancasila berarti berbatu sendi yang lima atau pelaksanaan kesusilaan yang lima. Lahirnya pancasila sebagai dasar negara terjadi pada saat sidang BPUPKI (Badan Penyelidik Usaha Persiapan Kemerdekaan Indonesia) yang pertama.
+    Pada tanggal 18 Agustus 1945, disahkan Undang-Undang Dasar 1945 pada sidang Panitia Persiapan Kemerdekaan Indonesia (PPKI) termasuk pembukaan UUD 1945. Pada pembukaan UUD 1945, termuat isi rumusan Prinsip Dasar Negara (Pancasila) pada alinea ke IV yang berbunyi:
+1.	Ketuhanan Yang Maha Esa
+2.	Kemanusiaan yang Adil dan Beradab
+3.	Persatuan Indonesia
+4.	Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan
+5.	Keadilan sosial bagi seluruh rakyat Indonesia
               ''',
                         style: new TextStyle(
+                            fontSize: 12.0,
+                            color: appBlack,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.justify,
+                      ),
+                      Text(
+                        '''Adapun usulan-usulan dasar negara disampaikan oleh tiga tokoh negara, yaitu:\n\n''',
+                        style: new TextStyle(
+                          fontWeight: FontWeight.bold,
                           fontSize: 12.0,
                           color: appBlack,
                         ),
                         textAlign: TextAlign.justify,
                       ),
-                      Text(
-                        '''Usulan-usulan Dasar Negara''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(
-                        '''Foto Muhammad yamin''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.normal,
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
+                      // Text(
+                      //   '''\nFoto Muhammad yamin''',
+                      //   style: new TextStyle(
+                      //     fontWeight: FontWeight.normal,
+                      //     fontSize: 12.0,
+                      //     color: appBlack,
+                      //   ),
+                      //   textAlign: TextAlign.center,
+                      // ),
                       AspectRatio(
                         aspectRatio: 1,
                         child: PhotoViewGallery.builder(
@@ -204,7 +207,7 @@ class Pb3PpknView extends GetView<Pb3PpknController> {
                       ),
                       Text(
                         ''' 
-  Muhammad yamin  mengusulkan lima dasar negara pada tanggal 29 Mei 1945
+-   Muhammad yamin  mengusulkan lima dasar negara pada tanggal 29 Mei 1945
 1. Peri kebangsaan
 2. Peri kemanusiaan
 3. Peri ketuhanan
@@ -216,15 +219,15 @@ class Pb3PpknView extends GetView<Pb3PpknController> {
                           color: appBlack,
                         ),
                       ),
-                      Text(
-                        '''Foto Prof. Dr. Mr. Soepomo''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.normal,
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
+                      // Text(
+                      //   '''Foto Prof. Dr. Mr. Soepomo''',
+                      //   style: new TextStyle(
+                      //     fontWeight: FontWeight.normal,
+                      //     fontSize: 12.0,
+                      //     color: appBlack,
+                      //   ),
+                      //   textAlign: TextAlign.center,
+                      // ),
                       AspectRatio(
                         aspectRatio: 1,
                         child: PhotoViewGallery.builder(
@@ -245,7 +248,7 @@ class Pb3PpknView extends GetView<Pb3PpknController> {
                       ),
                       Text(
                         ''' 
-  Prof. Dr. Mr. Soepomo mengusulkan lima asas dalam pidato singkatnya pada tanggal 31 Mei 1945
+-   Prof. Dr. Mr. Soepomo mengusulkan lima asas dalam pidato singkatnya pada tanggal 31 Mei 1945
 1. Persatuan
 2. Kekeluargaan
 3. Keseimbangan lahir batin
@@ -257,15 +260,15 @@ class Pb3PpknView extends GetView<Pb3PpknController> {
                           color: appBlack,
                         ),
                       ),
-                      Text(
-                        '''Foto Ir. Soekarno''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.normal,
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
+                      // Text(
+                      //   '''Foto Ir. Soekarno''',
+                      //   style: new TextStyle(
+                      //     fontWeight: FontWeight.normal,
+                      //     fontSize: 12.0,
+                      //     color: appBlack,
+                      //   ),
+                      //   textAlign: TextAlign.center,
+                      // ),
                       AspectRatio(
                         aspectRatio: 1,
                         child: PhotoViewGallery.builder(
@@ -286,7 +289,7 @@ class Pb3PpknView extends GetView<Pb3PpknController> {
                       ),
                       Text(
                         ''' 
-  Ir. Soekarno mengusulkan rumusan dasar negara dalam pidato tanpa teks di hari terakhir Sidang BPUPKI pada tanggal 1 Juni 1945
+-   Ir. Soekarno mengusulkan rumusan dasar negara dalam pidato tanpa teks di hari terakhir Sidang BPUPKI pada tanggal 1 Juni 1945
 1. Kebangsaan Indonesia
 2. Internasionalisme atau peri kemanusiaan
 3. Mufakat atau demokrasi

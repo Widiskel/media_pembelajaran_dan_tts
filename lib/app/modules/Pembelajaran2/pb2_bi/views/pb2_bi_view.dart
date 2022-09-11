@@ -128,7 +128,7 @@ class Pb2BIView extends GetView<Pb2BiController> {
 
             Container(
               width: double.maxFinite,
-              padding: EdgeInsets.all(30),
+              padding: EdgeInsets.all(15),
               height: double.maxFinite,
               margin: EdgeInsets.only(left: 32, right: 32, top: 95, bottom: 35),
               decoration: BoxDecoration(
@@ -140,19 +140,47 @@ class Pb2BIView extends GetView<Pb2BiController> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical, //.horizontal
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '''Peran Pelajar dalam Mengisi Kemerdekaan''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Peran Pelajar dalam Mengisi Kemerdekaan''',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
-                        '''\n   Pelajar merupakan salah satu warga negara yang memiliki peran dan tugas yang harus dilaksanakan untuk mengisi kemerdekaan. Kita sebagai generasi penerus bangsa, pelajar dituntut bekerja keras dan belajar dengan sungguh-sungguh untuk meningkatkan kualitas dirinya. Belajar dapat dilakukan melalui kegiatan kemasyarakatan yang sangat berguna untuk mengasah rasa peduli dan cinta tanah air. Kegiatan-kegiatan seperti pramuka, Palang Merah Remaja (PMR) menjadi duta seni, kegiatan olahraga yang berdampak baik bagi peningkatan kualitas diri pelajar.
-  Perjuangan pelajar sebagai generasi muda saat ini tidak lagi mengangkat senjata dan berlaga di medan perang melawan penjajah yang tampak. Pelajar hanya perlu berjuang untuk melawan kebodohan, kemiskinan, rasa malas, rasa mudah menyerah yang dapat merugikan bangsa dan negara. Ia harus berpendidikan, pantang menyerah, pekerja keras, kreatif, berakhlak mulia, cinta tanah air dan bangsa.''',
+                        '''\n
+Perhatikan teks berikut ini\n''',
+                        style: new TextStyle(
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.bold,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.justify,
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: appBlack, width: 2)),
+                        child: Text(
+                          '''       Pelajar merupakan salah satu warga negara yang memiliki peran dan tugas yang harus dilaksanakan untuk mengisi kemerdekaan. Kita sebagai generasi penerus bangsa, pelajar dituntut bekerja keras dan belajar dengan sungguh-sungguh untuk meningkatkan kualitas dirinya. Belajar dapat dilakukan melalui kegiatan kemasyarakatan yang sangat berguna untuk mengasah rasa peduli dan cinta tanah air. Kegiatan-kegiatan seperti pramuka, Palang Merah Remaja (PMR), menjadi duta seni, kegiatan olahraga yang berdampak baik bagi peningkatan kualitas diri pelajar.
+      Perjuangan pelajar sebagai generasi muda saat ini tidak lagi mengangkat senjata dan berlaga di medan perang melawan penjajah yang tampak. Pelajar hanya perlu berjuang untuk melawan kebodohan, kemiskinan, rasa malas, rasa mudah menyerah yang dapat merugikan bangsa dan negara. Ia harus berpendidikan, pantang menyerah, pekerja keras, kreatif, berakhlak mulia, cinta tanah air dan bangsa.
+''',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                      Text(
+                        '''\nPada teks di atas, kita akan belajar menemukan kata baku dan tidak baku.''',
                         style: new TextStyle(
                           fontSize: 12.0,
                           color: appBlack,
@@ -160,17 +188,7 @@ class Pb2BIView extends GetView<Pb2BiController> {
                         textAlign: TextAlign.justify,
                       ),
                       Text(
-                        '''\nKata Baku''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(
-                        '''\n   Kata baku adalah kata yang sesuai dengan pedoman atau kaidah bahasa yang telah ditetapkan sebelumnya. Sedangkan kata tidak baku adalah kata yang tidak sesuai dengan kaidah bahasa.
-  Contoh kata baku pada teks peran pelajar dalam mengisi kemerdekaan
+                        '''\n   Kata baku adalah kata yang sesuai dengan pedoman atau kaidah bahasa yang telah ditetapkan sebelumnya, sedangkan kata tidak baku adalah kata yang tidak sesuai dengan kaidah bahasa. Contoh kata baku pada teks peran pelajar dalam mengisi kemerdekaan
 ''',
                         style: new TextStyle(
                           fontSize: 12.0,

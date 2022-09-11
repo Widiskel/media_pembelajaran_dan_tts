@@ -140,23 +140,27 @@ class Pb2SbdpView extends GetView<Pb2SbdpController> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical, //.horizontal
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '''Seni Rupa Daerah Indonesia''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Seni Rupa Daerah Indonesia''',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
-                        '''\n  Seni rupa daerah adalah seni rupa yang terdapat di berbagai daerah di Indonesia. Seni rupa daerah dapat disebut juga seni rupa tradisional karena dikerjakan secara turun-menurun. Hasil karya seni rupa telah menjadi bagian dari peradaban manusia. Keindahan karya-karya seni rupa terdapat pada bentuk dan warnanya. Dengan mengenal berbagai bentuk karya seni rupa, kita dapat merasakan keindahannya dengan baik.
-  Seni rupa daerah Indonesia terbagi menjadi tiga jenis, yaitu:
+                        '''\n     Seni rupa daerah adalah seni rupa yang terdapat di berbagai daerah di Indonesia. Seni rupa daerah dapat disebut juga seni rupa tradisional karena dikerjakan secara turun-menurun. Hasil karya seni rupa telah menjadi bagian dari peradaban manusia. Keindahan karya-karya seni rupa terdapat pada bentuk dan warnanya. Dengan mengenal berbagai bentuk karya seni rupa, kita dapat merasakan keindahannya dengan baik.
+      Seni rupa daerah Indonesia terbagi menjadi tiga jenis, yaitu:
 1. Seni lukis (2 dimensi). Seni lukis adalah seni menggambarkan objek-objek berupa pemandangan alam, binatang, manusia, tumbuhan, benda di alam untuk menimbulkan perasaan keindahan.
 2. Seni patung (3 dimensi). Seni patung adalah seni membuat bentuk manusia atau binatang dengan bahan yang lunak atau bahan kertas
 3. Seni kriya (3  dimensi). Seni kriya adalah sei kerajinan dalam membuat benda pakai berdasarkan kegunaan dan keindahannya dalam kehidupan sehari-hari.''',
                         style: new TextStyle(
+                          fontWeight: FontWeight.bold,
                           fontSize: 12.0,
                           color: appBlack,
                         ),
@@ -167,19 +171,21 @@ class Pb2SbdpView extends GetView<Pb2SbdpController> {
 \nContoh seni lukis daerah
 ''',
                         style: new TextStyle(
-                            fontSize: 12.0,
-                            color: appBlack,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(
-                        '''Seni lukis kamasan dari Bali.''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.normal,
-                          fontSize: 10.0,
+                          fontSize: 12.0,
                           color: appBlack,
                         ),
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.left,
+                      ),
+                      Center(
+                        child: Text(
+                          '''Seni lukis kamasan dari Bali.''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -199,14 +205,16 @@ class Pb2SbdpView extends GetView<Pb2SbdpController> {
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Sumber: bolitoursclub.com''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: bolitoursclub.com''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -217,14 +225,16 @@ class Pb2SbdpView extends GetView<Pb2SbdpController> {
                         ),
                         textAlign: TextAlign.justify,
                       ),
-                      Text(
-                        '''Seni lukis kaca dari Cirebon.''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.normal,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Seni lukis kaca dari Cirebon.''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -244,33 +254,37 @@ class Pb2SbdpView extends GetView<Pb2SbdpController> {
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Sumber: lukis-mania.blogspot.com''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: lukis-mania.blogspot.com''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
 \nContoh seni patung daerah
 ''',
                         style: new TextStyle(
-                            fontSize: 12.0,
-                            color: appBlack,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(
-                        '''Seni patung Asmat dari Papua''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.normal,
-                          fontSize: 10.0,
+                          fontSize: 12.0,
                           color: appBlack,
                         ),
                         textAlign: TextAlign.center,
+                      ),
+                      Center(
+                        child: Text(
+                          '''Seni patung Asmat dari Papua''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -290,14 +304,16 @@ class Pb2SbdpView extends GetView<Pb2SbdpController> {
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Sumber: greenfreshday.wordpress.com''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: greenfreshday.wordpress.com''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -310,22 +326,24 @@ class Pb2SbdpView extends GetView<Pb2SbdpController> {
                       ),
                       Text(
                         '''\nContoh seni kriya daerah
-Seni Tekstil
+- Seni Tekstil
 ''',
                         style: new TextStyle(
-                            fontSize: 12.0,
-                            color: appBlack,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(
-                        '''Kain songket''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.normal,
-                          fontSize: 10.0,
+                          fontSize: 12.0,
                           color: appBlack,
                         ),
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.left,
+                      ),
+                      Center(
+                        child: Text(
+                          '''Kain songket''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -345,14 +363,16 @@ Seni Tekstil
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Sumber: student-activity.binus.ac.id''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: student-activity.binus.ac.id''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -363,14 +383,16 @@ Seni Tekstil
                         ),
                         textAlign: TextAlign.justify,
                       ),
-                      Text(
-                        '''Kain batik''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.normal,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Kain batik''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -390,14 +412,15 @@ Seni Tekstil
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Sumber: cleanpng.com''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: cleanpng.com''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -408,14 +431,16 @@ Seni Tekstil
                         ),
                         textAlign: TextAlign.justify,
                       ),
-                      Text(
-                        '''Kain Tenun''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.normal,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Kain Tenun''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -435,14 +460,15 @@ Seni Tekstil
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Sumber: lazada.co.id''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: lazada.co.id''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -455,13 +481,13 @@ Seni Tekstil
                       ),
                       Text(
                         '''
-Seni Anyaman
+- Seni Anyaman
 ''',
                         style: new TextStyle(
-                            fontSize: 12.0,
-                            color: appBlack,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
+                          fontSize: 12.0,
+                          color: appBlack,
+                        ),
+                        textAlign: TextAlign.left,
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -499,14 +525,15 @@ Seni Anyaman
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Sumber: pakdosen.co.id''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: pakdosen.co.id''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -519,7 +546,7 @@ Seni Anyaman
                       ),
                       Text(
                         '''
-Seni Ukir
+- Seni Ukir
 ''',
                         style: new TextStyle(
                             fontSize: 12.0,
@@ -545,14 +572,16 @@ Seni Ukir
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Sumber: journal.uc.ac.id''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: journal.uc.ac.id''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.normal,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),

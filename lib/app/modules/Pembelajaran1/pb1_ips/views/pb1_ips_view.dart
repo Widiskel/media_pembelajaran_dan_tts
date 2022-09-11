@@ -128,7 +128,7 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
 
             Container(
               width: double.maxFinite,
-              padding: EdgeInsets.all(30),
+              padding: EdgeInsets.all(15),
               height: double.maxFinite,
               margin: EdgeInsets.only(left: 32, right: 32, top: 95, bottom: 35),
               decoration: BoxDecoration(
@@ -140,25 +140,27 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical, //.horizontal
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        '''Kegiatan Mengisi Kemerdekaan''',
-                        style: new TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Kegiatan Mengisi Kemerdekaan''',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
-                        '''
+                        '''\n
 \n  Kemerdekaan Negara Kesatuan Republik Indonesia didapatkan dengan cara yang tidak mudah dan tidak murah. Bertahun-tahun para pemimpin bangsa berupaya dengan berbagai macam cara untuk melepaskan diri dari penjajahan bangsa lain. Ribuan nyawa manusia juga telah melayang dalam upaya ini.
-  Generasi penerus bangsa harus mengisi kemerdekaan dengan kegiatan yang positif dalam rangka pembengunan bangsa Indonesia yang seutuhnya. Misalnya dengan mencintai dan bangga menjadi bangsa Indonesia serta membangun kualitas manusia Indonesia dengan cara menuntuk ilmu setinggi-tingginya dan berkaya untuk membangun bangsa Indonesia. 
-  Kegiatan mengisi kemerdekaan bisa dengan cara pembangunan sarana dan prasarana di berbagai bidang.''',
+  Generasi penerus bangsa harus mengisi kemerdekaan dengan kegiatan yang positif dalam rangka pembangunan bangsa Indonesia yang seutuhnya. Misalnya, dengan mencintai dan bangga menjadi bangsa Indonesia serta membangun kualitas manusia dengan cara menuntut ilmu setinggi-tingginya dan berkarya untuk membangun bangsa Indonesia. Kegiatan mengisi kemerdekaan bisa dengan cara pembangunan sarana dan prasarana di berbagai bidang, contohnya:''',
                         style: new TextStyle(
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
+                            fontSize: 12.0,
+                            color: appBlack,
+                            fontWeight: FontWeight.bold),
                         textAlign: TextAlign.justify,
                       ),
                       Text(
@@ -169,6 +171,16 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                           color: appBlack,
                         ),
                         textAlign: TextAlign.justify,
+                      ),
+                      Center(
+                        child: Text(
+                          '''Pembangunan jalan''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -188,14 +200,15 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Pembangunan jalan. Sumber: bisnis.tempo.co''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: bisnis.tempo.co''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -205,6 +218,16 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                           color: appBlack,
                         ),
                         textAlign: TextAlign.justify,
+                      ),
+                      Center(
+                        child: Text(
+                          '''Pembangunan jembatan.''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -224,14 +247,15 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Pembangunan jembatan. Sumber: tender-indonesia.com''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: tender-indonesia.com''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -241,6 +265,16 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                           color: appBlack,
                         ),
                         textAlign: TextAlign.justify,
+                      ),
+                      Center(
+                        child: Text(
+                          '''Pembangunan pasar.''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -260,14 +294,15 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Pembangunan pasar. Sumber: radarmadura.jawapos.com''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: radarmadura.jawapos.com''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -277,6 +312,16 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                           color: appBlack,
                         ),
                         textAlign: TextAlign.justify,
+                      ),
+                      Center(
+                        child: Text(
+                          '''Pembangunan sekolah.''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -296,14 +341,15 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Pembangunan sekolah. Sumber: sekolah.data.kemendikbud.go.id''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: sekolah.data.kemendikbud.go.id''',
+                          style: new TextStyle(
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                       Text(
                         '''
@@ -313,6 +359,17 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                           color: appBlack,
                         ),
                         textAlign: TextAlign.justify,
+                      ),
+                      Center(
+                        child: Text(
+                          '''Pembangunan tempat ibadah.''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.italic,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       AspectRatio(
                         aspectRatio: 1,
@@ -332,14 +389,16 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                           itemCount: 1,
                         ),
                       ),
-                      Text(
-                        '''Pembangunan tempat ibadah. Sumber: ajnn.net''',
-                        style: new TextStyle(
-                          fontStyle: FontStyle.italic,
-                          fontSize: 10.0,
-                          color: appBlack,
+                      Center(
+                        child: Text(
+                          '''Sumber: ajnn.net''',
+                          style: new TextStyle(
+                            fontStyle: FontStyle.italic,
+                            fontSize: 10.0,
+                            color: appBlack,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
