@@ -142,7 +142,7 @@ class Pb1IpaView extends GetView<Pb1IpaController> {
                     children: [
                       Center(
                         child: Text(
-                          '''Perubahan wujud benda \n(Menyblim)''',
+                          '''Perubahan wujud benda \n(Menyublim)''',
                           style: new TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 12.0,

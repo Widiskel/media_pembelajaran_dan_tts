@@ -156,7 +156,7 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                       Text(
                         '''\n
 \n  Kemerdekaan Negara Kesatuan Republik Indonesia didapatkan dengan cara yang tidak mudah dan tidak murah. Bertahun-tahun para pemimpin bangsa berupaya dengan berbagai macam cara untuk melepaskan diri dari penjajahan bangsa lain. Ribuan nyawa manusia juga telah melayang dalam upaya ini.
-  Generasi penerus bangsa harus mengisi kemerdekaan dengan kegiatan yang positif dalam rangka pembangunan bangsa Indonesia yang seutuhnya. Misalnya, dengan mencintai dan bangga menjadi bangsa Indonesia serta membangun kualitas manusia dengan cara menuntut ilmu setinggi-tingginya dan berkarya untuk membangun bangsa Indonesia. Kegiatan mengisi kemerdekaan bisa dengan cara pembangunan sarana dan prasarana di berbagai bidang, contohnya:''',
+  Generasi penerus bangsa harus mengisi kemerdekaan dengan kegiatan yang positif dalam rangka pembangunan bangsa Indonesia yang seutuhnya. Misalnya, dengan mencintai dan bangga menjadi bangsa Indonesia serta membangun kualitas manusia dengan cara menuntut ilmu setinggi-tingginya dan berkarya untuk membangun bangsa Indonesia. Adapun contoh yang dapat dilakukan dalam mengisi kemerdekaan antara lain:''',
                         style: new TextStyle(
                             fontSize: 12.0,
                             color: appBlack,
@@ -174,7 +174,7 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                       ),
                       Center(
                         child: Text(
-                          '''Pembangunan jalan''',
+                          '''Mengikuti Upacara Bendera''',
                           style: new TextStyle(
                             fontSize: 10.0,
                             color: appBlack,
@@ -193,7 +193,7 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                               maxScale: PhotoViewComputedScale.contained * 10,
                               minScale: PhotoViewComputedScale.contained,
                               imageProvider:
-                                  AssetImage("assets/img/pb1_ips_1.jpg"),
+                                  AssetImage("assets/img/pb1_ips_1.png"),
                               initialScale: PhotoViewComputedScale.covered,
                             );
                           },
@@ -202,7 +202,7 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                       ),
                       Center(
                         child: Text(
-                          '''Sumber: bisnis.tempo.co''',
+                          '''Sumber: jatimnetwork.com''',
                           style: new TextStyle(
                             fontSize: 10.0,
                             color: appBlack,
@@ -221,7 +221,7 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                       ),
                       Center(
                         child: Text(
-                          '''Pembangunan jembatan.''',
+                          '''Menjaga dan melestarikan budaya.''',
                           style: new TextStyle(
                             fontSize: 10.0,
                             color: appBlack,
@@ -249,7 +249,7 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                       ),
                       Center(
                         child: Text(
-                          '''Sumber: tender-indonesia.com''',
+                          '''Sumber: lokadata.ID''',
                           style: new TextStyle(
                             fontSize: 10.0,
                             color: appBlack,
@@ -268,7 +268,7 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                       ),
                       Center(
                         child: Text(
-                          '''Pembangunan pasar.''',
+                          '''Terlibat aktif dalam kegiatan masyarakat.''',
                           style: new TextStyle(
                             fontSize: 10.0,
                             color: appBlack,
@@ -296,104 +296,8 @@ class Pb1IpsView extends GetView<Pb1IpsController> {
                       ),
                       Center(
                         child: Text(
-                          '''Sumber: radarmadura.jawapos.com''',
+                          '''Sumber: JabarEkspres.com''',
                           style: new TextStyle(
-                            fontSize: 10.0,
-                            color: appBlack,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      Text(
-                        '''
-''',
-                        style: new TextStyle(
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
-                        textAlign: TextAlign.justify,
-                      ),
-                      Center(
-                        child: Text(
-                          '''Pembangunan sekolah.''',
-                          style: new TextStyle(
-                            fontSize: 10.0,
-                            color: appBlack,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      AspectRatio(
-                        aspectRatio: 1,
-                        child: PhotoViewGallery.builder(
-                          backgroundDecoration:
-                              BoxDecoration(color: Colors.transparent),
-                          scrollPhysics: BouncingScrollPhysics(),
-                          builder: (BuildContext context, int index) {
-                            return PhotoViewGalleryPageOptions(
-                              maxScale: PhotoViewComputedScale.contained * 10,
-                              minScale: PhotoViewComputedScale.contained,
-                              imageProvider:
-                                  AssetImage("assets/img/pb1_ips_4.jpg"),
-                              initialScale: PhotoViewComputedScale.covered,
-                            );
-                          },
-                          itemCount: 1,
-                        ),
-                      ),
-                      Center(
-                        child: Text(
-                          '''Sumber: sekolah.data.kemendikbud.go.id''',
-                          style: new TextStyle(
-                            fontSize: 10.0,
-                            color: appBlack,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      Text(
-                        '''
-''',
-                        style: new TextStyle(
-                          fontSize: 12.0,
-                          color: appBlack,
-                        ),
-                        textAlign: TextAlign.justify,
-                      ),
-                      Center(
-                        child: Text(
-                          '''Pembangunan tempat ibadah.''',
-                          style: new TextStyle(
-                            fontStyle: FontStyle.italic,
-                            fontSize: 10.0,
-                            color: appBlack,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      AspectRatio(
-                        aspectRatio: 1,
-                        child: PhotoViewGallery.builder(
-                          backgroundDecoration:
-                              BoxDecoration(color: Colors.transparent),
-                          scrollPhysics: BouncingScrollPhysics(),
-                          builder: (BuildContext context, int index) {
-                            return PhotoViewGalleryPageOptions(
-                              maxScale: PhotoViewComputedScale.contained * 10,
-                              minScale: PhotoViewComputedScale.contained,
-                              imageProvider:
-                                  AssetImage("assets/img/pb1_ips_5.jpg"),
-                              initialScale: PhotoViewComputedScale.covered,
-                            );
-                          },
-                          itemCount: 1,
-                        ),
-                      ),
-                      Center(
-                        child: Text(
-                          '''Sumber: ajnn.net''',
-                          style: new TextStyle(
-                            fontStyle: FontStyle.italic,
                             fontSize: 10.0,
                             color: appBlack,
                           ),

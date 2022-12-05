@@ -182,8 +182,9 @@ class Pb3Ppkn2View extends GetView<Pb3Ppkn2Controller> {
                       Text(
                         '''\n
 Ada beberapa cara dalam menemukan informasi penting, yaitu:
-1. Membuat daftar pertanyaan berdasarkan isi teks dengan menggunakan kata tanya, seperti apa, siapa, kapan, di mana, mengapa, dan bagaimana.
-2. Menggunakan peta pikiran yaitu menentukan ide pokok dari teks kemudian menuliskan kalimat penjelas dalam bentuk poin-poin.
+1. Membaca teks dengan cermat untuk mengetahui isi teks.
+2. Membuat daftar pertanyaan berdasarkan isi teks dengan menggunakan kata tanya, seperti apa, siapa, kapan, di mana, mengapa, dan bagaimana.
+3. Menggunakan peta pikiran yaitu menentukan ide pokok dari teks kemudian menuliskan kalimat penjelas dalam bentuk poin-poin
 ''',
                         style: const TextStyle(
                             fontSize: 12,

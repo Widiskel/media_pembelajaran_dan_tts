@@ -264,11 +264,11 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
 
   void generateRandomWord() {
     final List<String> wl = [
-      'undangan',
+      'Undangan',
       'Resmi',
       'Menyublim',
       'KapurBarus',
-      'Pembangunan'
+      'Upacara'
     ];
     final WSSettings ws = WSSettings(
       width: numBoxPerRow,
@@ -349,7 +349,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                                         ? TextDecoration.lineThrough
                                         : TextDecoration.none)),
                             Text(
-                                '4. Benda yang terlalu lama dilemari akan mengecil dan menghilang.',
+                                '4. Contoh benda yang terlalu lama dilemari akan mengecil dan menghilang.',
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
@@ -359,7 +359,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                                         ? TextDecoration.lineThrough
                                         : TextDecoration.none)),
                             Text(
-                                '5. Termasuk salah satu kegiatan mengisi kemerdekaan.',
+                                '5. Salah satu kegiatan mengisi kemerdekaan di sekolah.',
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,

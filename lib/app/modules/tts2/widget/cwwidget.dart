@@ -264,7 +264,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
   void generateRandomWord() {
     final List<String> wl = [
       'Pelajar',
-      'PrajaMudaKarana',
+      'Kreatif',
       'Mengkristal',
       'Salju',
       'Lukisan'
@@ -327,7 +327,8 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                                       ? TextDecoration.lineThrough
                                       : TextDecoration.none),
                             ),
-                            Text('2.Kepanjangan Pramuka. ',
+                            Text(
+                                '2. Kata baku yang memiliki arti memiliki daya cipta, memiliki kemampuan untuk menciptakan. ',
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
