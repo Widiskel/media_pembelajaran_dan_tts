@@ -265,8 +265,8 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
     final List<String> wl = [
       'LimaDasar',
       'Agustus',
-      'Soekarno',
-      'GotongRoyong',
+      'Membaca',
+      'Toleransi',
       'musyawarah'
     ];
     final WSSettings ws = WSSettings(
@@ -337,7 +337,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                                         ? TextDecoration.lineThrough
                                         : TextDecoration.none)),
                             Text(
-                                '3. Tokoh yang mengusulkan dasar negara di hari terakhir sidang BPUPKI. ',
+                                '3. Cara menemukan informasi penting sebelum mencatat isi pokok bacaan. ',
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
@@ -347,7 +347,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                                         ? TextDecoration.lineThrough
                                         : TextDecoration.none)),
                             Text(
-                                '4. Kegiatan yang membantu masyarakat secara bersama-sama dan sukarela. ',
+                                '4. Salah satu nilai luhur yang saling menghormati perbedaan. ',
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
@@ -357,7 +357,7 @@ class _CrosswordWidgetState extends State<CrosswordWidget> {
                                         ? TextDecoration.lineThrough
                                         : TextDecoration.none)),
                             Text(
-                                '5. Rapat untuk mengatasi masalah dalam suatu desa. ',
+                                '5. Rapat bersama untuk mengatasi masalah dalam suatu desa. ',
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,

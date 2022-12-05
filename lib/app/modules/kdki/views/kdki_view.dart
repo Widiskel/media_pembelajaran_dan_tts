@@ -283,7 +283,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.9.1 Menjelaskan jenis-jenis dan bagian-bagian surat undangan dengan ejaan yang tepat
+                        '''3.9.1 Menjelaskan jenis-jenis dan bagian-bagian surat undangan dengan ejaan yang tepat.
 ''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
@@ -295,7 +295,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.9  Membuat surat undangan (ulang tahun, kegiatan sekolah, kenaikan kelas, dll.) dengan kalimat efektif dan memperhatikan penggunaan ejaan''',
+                        '''4.9  Membuat surat undangan (ulang tahun, kegiatan sekolah, kenaikan kelas, dll.) dengan kalimat efektif dan memperhatikan penggunaan ejaan.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.left,
@@ -304,7 +304,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.9.1 Menentukan bagian surat undangan dengan ejaan yang tepat''',
+                        '''4.9.1 Membuat kembali surat undangan dengan ejaan yang tepat.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.left,
@@ -361,7 +361,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.7  Menganalisis pengaruh kalor terhadap perubahan suhu dan wujud benda dalam kehidupan seharihari''',
+                        '''3.7  Menganalisis pengaruh kalor terhadap perubahan suhu dan wujud benda dalam kehidupan sehari-hari.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -370,7 +370,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.7.1 Menemukan perubahan wujud benda yang dipengaruhi kalor atau panas''',
+                        '''3.7.1 Menemukan perubahan wujud benda yang dipengaruhi kalor atau panas.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -381,7 +381,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.7 Melaporkan hasil percobaan pengaruh kalor pada benda''',
+                        '''4.7 Melaporkan hasil percobaan pengaruh kalor pada benda.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -390,7 +390,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.7.1 Mempertujukkan perubahan wujud benda yang dipengaruhi kalor atau panas''',
+                        '''4.7.1 Mempertujukkan perubahan wujud benda yang dipengaruhi kalor atau panas.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -446,7 +446,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.4  Mengidentifikasi faktor-faktor penting penyebab penjajahan bangsa Indonesia dan upaya bangsa Indonesia dalam mempertahankan kedaulatannya''',
+                        '''3.4  Mengidentifikasi faktor-faktor penting penyebab penjajahan bangsa Indonesia dan upaya bangsa Indonesia dalam mempertahankan kedaulatannya. ''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -455,7 +455,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.4.1 Memberi contoh kegiatan-kegiatan dalam mengisi kemerdekaan''',
+                        '''3.4.1 Memberi contoh kegiatan-kegiatan dalam mengisi kemerdekaan.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -466,7 +466,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.4  Menyajikan hasil identifikasi mengenai faktor-faktor penting penyebab penjajahan bangsa Indonesia dan upaya bangsa Indonesia dalam mempertahankan kedaulatannya''',
+                        '''4.4  Menyajikan hasil identifikasi mengenai faktor-faktor penting penyebab penjajahan bangsa Indonesia dan upaya bangsa Indonesia dalam mempertahankan kedaulatannya.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -475,7 +475,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.4.1 Menghubungkan kegiatan-kegiatan dalam mengisi kemerdekaan''',
+                        '''4.4.1 Mengikuti kegiatan-kegiatan dalam mengisi kemerdekaan.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -628,7 +628,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.5  Menggali informasi penting dari teks narasi yang disajikan secara lisan dan tulis menggunakan aspek: apa, dimana, kapan, siapa, mengapa, dan bagaimana ''',
+                        '''3.5  Menggali informasi penting dari teks narasi yang disajikan secara lisan dan tulis menggunakan aspek: apa, dimana, kapan, siapa, mengapa, dan bagaimana.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.left,
@@ -637,7 +637,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.5.1 Menemukan kosa kata baku dan tidak baku dalam peran pelajar dalam mengisi kemerdekaan''',
+                        '''3.5.1 Menemukan kosa kata baku dan tidak baku dalam peran pelajar dalam mengisi kemerdekaan.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.left,
@@ -648,7 +648,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.5  Memaparkan informasi penting dari teks narasi menggunakan aspek : apa, dimana, kapan, siapa, mengapa, dan bagaimana serta kosakata baku dan kalimat efektif''',
+                        '''4.5  Memaparkan informasi penting dari teks narasi menggunakan aspek : apa, dimana, kapan, siapa, mengapa, dan bagaimana serta kosakata baku dan kalimat efektif.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.left,
@@ -657,7 +657,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.5.1 Menunjukkan kosa kata baku dan tidak baku dalam peran pelajar dalam mengisi kemerdekaan''',
+                        '''4.5.1 Menunjukkan kosa kata baku dan tidak baku dalam peran pelajar dalam mengisi kemerdekaan.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.left,
@@ -668,7 +668,7 @@ Kompetensi Dasar dan Indikator
               ),
 
 //  bi
-
+// here
 // ipa
               SizedBox(
                 height: 20,
@@ -714,7 +714,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.7  Menganalisis pengaruh kalor terhadap perubahan suhu dan wujud benda dalam kehidupan seharihari ''',
+                        '''3.7  Menganalisis pengaruh kalor terhadap perubahan suhu dan wujud benda dalam kehidupan sehari-hari.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -723,7 +723,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.7.1 Menguraikan peristiwa pengkristalan''',
+                        '''3.7.1 Menguraikan peristiwa pengkristalan.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -734,7 +734,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.7 Melaporkan hasil percobaan pengaruh kalor pada benda''',
+                        '''4.7 Melaporkan hasil percobaan pengaruh kalor pada benda.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -743,7 +743,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.7.1 Mempraktikkan peristiwa pengkristalan''',
+                        '''4.7.1 Mempraktikkan peristiwa pengkristalan.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -799,7 +799,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.4  Memahami karya seni rupa daerah''',
+                        '''3.4  Memahami karya seni rupa daerah.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -808,7 +808,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.4.1 Menjelaskan ragam seni rupa daerah''',
+                        '''3.4.1 Menjelaskan ragam seni rupa daerah.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -819,7 +819,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.4  Membuat karya seni rupa daerah''',
+                        '''4.4  Membuat karya seni rupa daerah.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -828,7 +828,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.4.1 Mencoba membuat ragam seni rupa daerah''',
+                        '''4.4.1 Mencoba membuat ragam seni rupa daerah.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -982,7 +982,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.4  Mengidentifikasi faktor-faktor penting penyebab penjajahan bangsa Indonesia dan upaya bangsa Indonesia dalam mempertahankan kedaulatannya. ''',
+                        '''3.4  Mengidentifikasi faktor-faktor penting penyebab penjajahan bangsa Indonesia dan upaya bangsa Indonesia dalam mempertahankan kedaulatannya.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.left,
@@ -991,7 +991,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.4.1 Mendemontrasikan peristiwa lahirnya pancasila''',
+                        '''3.4.1 Mendemontrasikan peristiwa lahirnya pancasila.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.left,
@@ -1002,7 +1002,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.4  Menyajikan hasil identifikasi mengenai faktor-faktor penting penyebab penjajahan bangsa Indonesia dan upaya bangsa Indonesia dalam mempertahankan kedaulatannya''',
+                        '''4.4  Menyajikan hasil identifikasi mengenai faktor-faktor penting penyebab penjajahan bangsa Indonesia dan upaya bangsa Indonesia dalam mempertahankan kedaulatannya.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.left,
@@ -1011,7 +1011,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.4.1 Membuat kembali teks peristiwa lahirnya pancasila''',
+                        '''4.4.1 Membuat kembali teks peristiwa lahirnya pancasila.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.left,
@@ -1068,7 +1068,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.5  Menggali informasi penting dari teks narasi yang disajikan secara lisan dan tulis menggunakan aspek: apa, dimana, kapan, siapa, mengapa, dan bagaimana ''',
+                        '''3.5  Menggali informasi penting dari teks narasi yang disajikan secara lisan dan tulis menggunakan aspek: apa, dimana, kapan, siapa, mengapa, dan bagaimana.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -1077,7 +1077,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.5.1 Menguraikan informasi penting dari makna pancasila dalam keragaman budaya bangsa''',
+                        '''3.5.1 Menguraikan informasi penting dari makna pancasila dalam keragaman budaya bangsa.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -1088,7 +1088,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.5  Memaparkan informasi penting dari teks narasi menggunakan aspek : apa, dimana, kapan, siapa, mengapa, dan bagaimana serta kosakata baku dan kalimat efektif''',
+                        '''4.5  Memaparkan informasi penting dari teks narasi menggunakan aspek : apa, dimana, kapan, siapa, mengapa, dan bagaimana serta kosakata baku dan kalimat efektif.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -1097,7 +1097,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.5.1 Menunjukkan informasi penting dari makna pancasila dalam keragaman budaya bangsa''',
+                        '''4.5.1 Menunjukkan informasi penting dari makna pancasila dalam keragaman budaya bangsa.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -1153,7 +1153,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.3  Menelaah keberagaman sosial budaya masyarakat''',
+                        '''3.3  Menelaah keberagaman sosial budaya masyarakat.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -1162,7 +1162,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''3.3.1 Menentukan nilai-nilai pancasila yang berkembang di masyarakat
+                        '''3.3.1 Menentukan nilai-nilai pancasila yang berkembang di masyarakat.
 
 ''',
                         style: TextStyle(
@@ -1175,7 +1175,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.3  Menyelenggarakan kegiatan yang mendukung keberagaman sosial budaya masyarakat''',
+                        '''4.3  Menyelenggarakan kegiatan yang mendukung keberagaman sosial budaya masyarakat.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
@@ -1184,7 +1184,7 @@ Kompetensi Dasar dan Indikator
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        '''4.3.1 Membangun nilai-nilai pancasila yang berkembang di masyarakat''',
+                        '''4.3.1 Membangun nilai-nilai pancasila yang berkembang di masyarakat.''',
                         style: TextStyle(
                             fontSize: 10, fontWeight: FontWeight.w500),
                         textAlign: TextAlign.start,
