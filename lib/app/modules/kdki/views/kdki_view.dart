@@ -223,7 +223,7 @@ Kompetensi Dasar dan Indikator
                 textAlign: TextAlign.start,
               ),
               Text(
-                'A.	Kompetensi Dasar (KD) dan Indikator',
+                'Kompetensi Dasar (KD) dan Indikator',
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
@@ -484,65 +484,65 @@ Kompetensi Dasar dan Indikator
                   ]),
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'B.	Tujuan Pembelajaran',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.start,
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text(
-                  '''
-1.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menjelaskan jenis-jenis dan bagian-bagian surat undangan dengan ejaan yang tepat dengan benar.
-2.	Dengan menggunakan media pembelajaran interaktif, siswa mampu membuat kembali surat undangan dengan ejaan yang tepat dengan benar.
-3.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menemukan perubahan wujud benda yang dipengaruhi kalor atau panas dengan benar.
-4.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mempertunjukkan perubahan wujud benda yang dipengaruhi kalor atau panas dengan benar
-5.	Dengan menggunakan media pembelajaran interaktif, siswa mampu memberi contoh kegiatan-kegiatan dalam mengisi kemerdekaan dengan benar.
-6.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mengikuti kegiatan-kegiatan dalam mengisi kemerdekaan dengan benar
-''',
-                  style: TextStyle(
-                    fontSize: 11,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'C.	Materi Pembelajaran',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.start,
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text(
-                  '''
-•	Surat undangan
-•	Perubahan wujud benda (Penyubliman)
-•	Kegiatan mengisi kemerdekaan
-''',
-                  style: TextStyle(
-                    fontSize: 11,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-              ),
+              // SizedBox(
+              //   height: 20,
+              // ),
+//               Text(
+//                 'B.	Tujuan Pembelajaran',
+//                 style: TextStyle(
+//                   fontSize: 12,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//                 textAlign: TextAlign.start,
+//               ),
+//               SizedBox(
+//                 height: 5,
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.only(left: 15),
+//                 child: Text(
+//                   '''
+// 1.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menjelaskan jenis-jenis dan bagian-bagian surat undangan dengan ejaan yang tepat dengan benar.
+// 2.	Dengan menggunakan media pembelajaran interaktif, siswa mampu membuat kembali surat undangan dengan ejaan yang tepat dengan benar.
+// 3.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menemukan perubahan wujud benda yang dipengaruhi kalor atau panas dengan benar.
+// 4.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mempertunjukkan perubahan wujud benda yang dipengaruhi kalor atau panas dengan benar
+// 5.	Dengan menggunakan media pembelajaran interaktif, siswa mampu memberi contoh kegiatan-kegiatan dalam mengisi kemerdekaan dengan benar.
+// 6.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mengikuti kegiatan-kegiatan dalam mengisi kemerdekaan dengan benar
+// ''',
+//                   style: TextStyle(
+//                     fontSize: 11,
+//                   ),
+//                   textAlign: TextAlign.justify,
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 20,
+//               ),
+//               Text(
+//                 'C.	Materi Pembelajaran',
+//                 style: TextStyle(
+//                   fontSize: 12,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//                 textAlign: TextAlign.start,
+//               ),
+//               SizedBox(
+//                 height: 5,
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.only(left: 15),
+//                 child: Text(
+//                   '''
+// •	Surat undangan
+// •	Perubahan wujud benda (Penyubliman)
+// •	Kegiatan mengisi kemerdekaan
+// ''',
+//                   style: TextStyle(
+//                     fontSize: 11,
+//                   ),
+//                   textAlign: TextAlign.justify,
+//                 ),
+//               ),
 
 //ips
 
@@ -576,7 +576,7 @@ Kompetensi Dasar dan Indikator
               ),
 
               Text(
-                'A.	Kompetensi Dasar (KD) dan Indikator',
+                'Kompetensi Dasar (KD) dan Indikator',
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
@@ -837,65 +837,65 @@ Kompetensi Dasar dan Indikator
                   ]),
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'B.	Tujuan Pembelajaran',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.start,
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text(
-                  '''
-1.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menemukan kosa kata baku dan tidak baku dalam peran pelajar dalam mengisi kemerdekaan dengan benar.
-2.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menunjukkan kosa kata baku dan tidak baku dalam peran pelajar dalam mengisi kemerdekaan dengan benar.
-3.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menguraikan peristiwa pengkristalan dengan benar.
-4.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mempraktikkan peristiwa pengkristalan dengan benar.
-5.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menjelaskan ragam seni rupa daerah dengan benar.
-6.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mencoba membuat ragam seni rupa daerah dengan benar.
-''',
-                  style: TextStyle(
-                    fontSize: 11,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'C.	Materi Pembelajaran',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.start,
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text(
-                  '''
-•	Kosakata dalam bacaan
-•	Perubahan wujud benda (Pengkristalan)
-•	Ragam seni rupa daerah
-''',
-                  style: TextStyle(
-                    fontSize: 11,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-              ),
+              // SizedBox(
+              //   height: 20,
+              // ),
+//               Text(
+//                 'B.	Tujuan Pembelajaran',
+//                 style: TextStyle(
+//                   fontSize: 12,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//                 textAlign: TextAlign.start,
+//               ),
+//               SizedBox(
+//                 height: 5,
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.only(left: 15),
+//                 child: Text(
+//                   '''
+// 1.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menemukan kosa kata baku dan tidak baku dalam peran pelajar dalam mengisi kemerdekaan dengan benar.
+// 2.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menunjukkan kosa kata baku dan tidak baku dalam peran pelajar dalam mengisi kemerdekaan dengan benar.
+// 3.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menguraikan peristiwa pengkristalan dengan benar.
+// 4.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mempraktikkan peristiwa pengkristalan dengan benar.
+// 5.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menjelaskan ragam seni rupa daerah dengan benar.
+// 6.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mencoba membuat ragam seni rupa daerah dengan benar.
+// ''',
+//                   style: TextStyle(
+//                     fontSize: 11,
+//                   ),
+//                   textAlign: TextAlign.justify,
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 20,
+//               ),
+//               Text(
+//                 'C.	Materi Pembelajaran',
+//                 style: TextStyle(
+//                   fontSize: 12,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//                 textAlign: TextAlign.start,
+//               ),
+//               SizedBox(
+//                 height: 5,
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.only(left: 15),
+//                 child: Text(
+//                   '''
+// •	Kosakata dalam bacaan
+// •	Perubahan wujud benda (Pengkristalan)
+// •	Ragam seni rupa daerah
+// ''',
+//                   style: TextStyle(
+//                     fontSize: 11,
+//                   ),
+//                   textAlign: TextAlign.justify,
+//                 ),
+//               ),
 
               ///pb3
               ///
@@ -930,7 +930,7 @@ Kompetensi Dasar dan Indikator
               ),
 
               Text(
-                'A.	Kompetensi Dasar (KD) dan Indikator',
+                'Kompetensi Dasar (KD) dan Indikator',
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
@@ -1193,65 +1193,65 @@ Kompetensi Dasar dan Indikator
                   ]),
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'B.	Tujuan Pembelajaran',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.start,
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text(
-                  '''
-1.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mendemontrasikan peristiwa lahirnya pancasila dengan benar.
-2.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mengulangi peristiwa lahirnya pancasila dengan benar.
-3.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menguraikan informasi penting makna pancasila dalam keragaman budaya bangsa dengan benar.
-4.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menunjukkan informasi penting dari makna pancasila dalam keragaman budaya bangsa dengan benar.
-5.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menentukan nilai-nilai pancasila yang berkembang di masyarakat dengan benar.
-6.	Dengan menggunakan media pembelajaran interaktif, siswa mampu membangun nilai-nilai pancasila yang berkembang di masyarakat dengan benar.
-''',
-                  style: TextStyle(
-                    fontSize: 11,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'C.	Materi Pembelajaran',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.start,
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15),
-                child: Text(
-                  '''
-•	Peristiwa lahirnya pancasila
-•	Informasi penting dari bacaan
-•	Nilai-nilai luhur pancasila
-''',
-                  style: TextStyle(
-                    fontSize: 11,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-              ),
+//               SizedBox(
+//                 height: 20,
+//               ),
+//               Text(
+//                 'B.	Tujuan Pembelajaran',
+//                 style: TextStyle(
+//                   fontSize: 12,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//                 textAlign: TextAlign.start,
+//               ),
+//               SizedBox(
+//                 height: 5,
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.only(left: 15),
+//                 child: Text(
+//                   '''
+// 1.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mendemontrasikan peristiwa lahirnya pancasila dengan benar.
+// 2.	Dengan menggunakan media pembelajaran interaktif, siswa mampu mengulangi peristiwa lahirnya pancasila dengan benar.
+// 3.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menguraikan informasi penting makna pancasila dalam keragaman budaya bangsa dengan benar.
+// 4.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menunjukkan informasi penting dari makna pancasila dalam keragaman budaya bangsa dengan benar.
+// 5.	Dengan menggunakan media pembelajaran interaktif, siswa mampu menentukan nilai-nilai pancasila yang berkembang di masyarakat dengan benar.
+// 6.	Dengan menggunakan media pembelajaran interaktif, siswa mampu membangun nilai-nilai pancasila yang berkembang di masyarakat dengan benar.
+// ''',
+//                   style: TextStyle(
+//                     fontSize: 11,
+//                   ),
+//                   textAlign: TextAlign.justify,
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 20,
+//               ),
+//               Text(
+//                 'C.	Materi Pembelajaran',
+//                 style: TextStyle(
+//                   fontSize: 12,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//                 textAlign: TextAlign.start,
+//               ),
+//               SizedBox(
+//                 height: 5,
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.only(left: 15),
+//                 child: Text(
+//                   '''
+// •	Peristiwa lahirnya pancasila
+// •	Informasi penting dari bacaan
+// •	Nilai-nilai luhur pancasila
+// ''',
+//                   style: TextStyle(
+//                     fontSize: 11,
+//                   ),
+//                   textAlign: TextAlign.justify,
+//                 ),
+//               ),
               SizedBox(
                 height: 40,
               )

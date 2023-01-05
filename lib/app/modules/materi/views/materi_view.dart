@@ -107,7 +107,7 @@ class MateriView extends GetView<MateriController> {
                     margin: EdgeInsets.only(bottom: 30),
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/img/MATERI.png'),
+                          image: AssetImage('assets/img/materi.png'),
                           fit: BoxFit.contain),
                     ),
                   ),

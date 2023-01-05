@@ -518,7 +518,7 @@ class HelpView extends GetView<HelpController> {
                                               decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     image: AssetImage(
-                                                        'assets/img/MATERI.png'),
+                                                        'assets/img/materi.png'),
                                                     fit: BoxFit.contain),
                                               ),
                                             ),
