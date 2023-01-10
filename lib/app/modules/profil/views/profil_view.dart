@@ -157,6 +157,14 @@ class ProfilView extends GetView<ProfilController> {
                             style: TextStyle(
                                 fontSize: 10, fontWeight: FontWeight.bold),
                           ),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(
+                            "Dosen Pembimbing       :  Ana Naimatul Jannah, S.Pd., M.Pd.",
+                            style: TextStyle(
+                                fontSize: 10, fontWeight: FontWeight.bold),
+                          ),
                           Container(
                             width: Get.width,
                             color: appLightRed,
